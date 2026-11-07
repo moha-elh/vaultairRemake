@@ -558,16 +558,16 @@ h1, h2, h3, p { margin: 0; }
 .site-footer { background: var(--ink); color: var(--on-ink); }
 .site-footer a { color: var(--on-ink); }
 .site-footer a:hover { color: var(--on-ink-label); }
-.footer-inner { max-width: var(--page-max); margin: 0 auto; padding-inline: var(--pad-x); }
+.footer-inner { max-width: var(--page-max); margin: 0 auto; padding-inline: var(--pad-x); position: relative; z-index: 1; }
 .footer-cta {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 32px;
   align-items: end;
-  padding-block: 64px 48px;
+  padding-block: 48px 32px;
   border-bottom: 1px solid var(--on-ink-rule);
 }
-.footer-cta h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 4.2vw, 60px); line-height: 0.98; }
+.footer-cta h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; }
 .footer-cta__side { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 .footer-cta__side p { font-size: 16px; color: var(--on-ink-body); }
 .site-footer .btn--paper { color: var(--ink); }
@@ -576,7 +576,7 @@ h1, h2, h3, p { margin: 0; }
   display: grid;
   grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
   gap: 28px;
-  padding-block: 40px 32px;
+  padding-block: 32px 24px;
   font-size: 14px;
 }
 .footer-brand { display: flex; flex-direction: column; gap: 14px; }
@@ -602,9 +602,11 @@ h1, h2, h3, p { margin: 0; }
 }
 .footer-col h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 40px; border-bottom: 1px solid rgba(252, 242, 226, 0.5); }
 .footer-art { width: 100%; height: auto; }
+/* Its top is flat ink sky (castle peaks start ~9vw down), the same blue as the footer: slide it under the text */
+.footer-art { margin-top: -7vw; }
 .footer-bar {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
-  padding-block: 18px;
+  padding-block: 16px;
   font-size: 12px;
   color: var(--on-ink-body);
 }
