@@ -9,16 +9,31 @@ const scrollTo = (path, behavior) => {
   document.getElementById(id)?.scrollIntoView({ behavior });
 };
 
+// Counts a number up from 0 to its data-count value.
+const countUp = (el) => {
+  const to = +el.dataset.count, start = performance.now(), ms = 1200;
+  const tick = (now) => {
+    const t = Math.min(1, (now - start) / ms);
+    el.textContent = Math.round(to * (1 - (1 - t) ** 3));
+    if (t < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+};
+
 // Scroll reveals, sticky-header state, and hash-free section links:
 // /features renders the home page, scrolled to <section id="features">.
 export default function Reveal() {
   useEffect(() => {
     const root = document.documentElement;
     root.classList.add("js");
+    const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+        if (!e.isIntersecting) return;
+        e.target.classList.add("is-in");
+        io.unobserve(e.target);
+        if (!calm) e.target.querySelectorAll("[data-count]").forEach(countUp);
       }),
       { rootMargin: "0px 0px -10% 0px" }
     );
