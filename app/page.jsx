@@ -131,7 +131,10 @@ export default function Home() {
           {/* Hero */}
           <section className="section hero">
             <div className="hero__inner">
-              <p className="hero__eyebrow">Local-first encrypted vault · iPhone &amp; iPad</p>
+              <p className="hero__eyebrow">
+                <span className="hero__stars" role="img" aria-label="5 stars">{[0, 1, 2, 3, 4].map((k) => <Icon key={k} name="star-fill" />)}</span>
+                4.7 on the App Store
+              </p>
               <h1 className="h-display hero__title">
                 Your Hidden album{" "}
                 <em className="hero__twist">
@@ -147,7 +150,6 @@ export default function Home() {
                 <a className="btn btn--outline" href="/how-it-works">See how it works</a>
               </div>
               <div className="hero__meta">
-                <span className="hero__rating"><Icon name="star" />4.7 on the App Store</span>
                 <span>AES-256-GCM</span>
                 <span>Zero accounts</span>
               </div>

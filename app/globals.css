@@ -251,7 +251,8 @@ h1, h2, h3, p { margin: 0; }
 }
 .hero__twist path { stroke-dasharray: 1; stroke-dashoffset: 0; }
 .hero__answer { display: block; margin-top: 0.14em; color: var(--seal); }
-.hero__eyebrow { font-size: 16px; color: var(--ink); }
+.hero__eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; color: var(--ink); }
+.hero__stars { display: inline-flex; gap: 2px; font-size: 16px; color: var(--ink); }
 .hero__lead { font-size: 20px; max-width: 560px; }
 .hero__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .hero__meta {
@@ -263,7 +264,6 @@ h1, h2, h3, p { margin: 0; }
   font-size: 12px;
   color: var(--muted);
 }
-.hero__rating { display: inline-flex; align-items: center; gap: 6px; color: var(--ink); }
 .figure { margin: 0; }
 /* The hero art opens with ~36% empty paper sky: tuck that under the text */
 .hero .figure { margin-top: calc(min(100vw, var(--page-max)) * -0.15); }
