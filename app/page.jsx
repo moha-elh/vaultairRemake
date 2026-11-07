@@ -255,8 +255,8 @@ export default function Home() {
               <article className="cell step" data-reveal style={stagger(0)}>
                 <div className="cell__head">
                   <span className="step__num">I.</span>
-                  <span className="step__visual step__visual--bare">
-                    <svg width="112" height="112" viewBox="0 0 112 112" aria-hidden="true">
+                  <span className="step__visual">
+                    <svg width="80" height="80" viewBox="0 0 112 112" aria-hidden="true">
                       <g fill="#d5ccc0">{DOTS.map(([cx, cy]) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3" />)}</g>
                       <polyline className="pattern-line" pathLength="1" points="12,12 34,12 56,12 78,12 78,34 78,56 56,78 34,100" fill="none" stroke="#1e3aa7" strokeWidth="2.5" />
                       <g fill="#1e3aa7"><rect x="8" y="8" width="8" height="8" /><rect className="pattern-end" x="30" y="96" width="8" height="8" /></g>
