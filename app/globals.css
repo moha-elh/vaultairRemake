@@ -270,19 +270,6 @@ h1, h2, h3, p { margin: 0; }
 .figure { margin: 0; }
 /* The hero art opens with ~36% empty paper sky: tuck that under the text */
 .hero .figure { margin-top: calc(min(100vw, var(--page-max)) * -0.15); }
-.figure__caption {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 14px 28px;
-  border-top: 1px solid var(--ink);
-  font-family: var(--font-display); -webkit-text-stroke: var(--serif-bold) currentColor;
-  font-size: 16px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
 
 /* ---------- Trust strip ---------- */
 .trust { grid-template-columns: repeat(4, minmax(0, 1fr)); }

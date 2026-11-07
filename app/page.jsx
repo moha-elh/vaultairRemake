@@ -161,7 +161,6 @@ export default function Home() {
             <figure className="figure">
               <Image src={hero} sizes="(max-width: 1280px) 100vw, 1280px" loading="eager" fetchPriority="high" placeholder="blur"
                 alt="Engraving of a walled hilltop citadel with a great round vault door cut into the cliff, above a calm sea." />
-              <figcaption className="figure__caption"><span>Fig. I · The pattern is the key</span><span>Six dots · one turn · 256 bits</span></figcaption>
             </figure>
           </section>
 
