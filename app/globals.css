@@ -245,7 +245,7 @@ h1, h2, h3, p { margin: 0; }
   position: relative;
   z-index: 1;
 }
-.hero__title { max-width: 1080px; text-wrap: balance; }
+.hero__title { max-width: 1080px; text-wrap: balance; --serif-bold: 0.008em; }
 .hero__twist { position: relative; white-space: nowrap; }
 .hero__twist svg {
   position: absolute; left: 0; bottom: 0.15em;
