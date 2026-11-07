@@ -679,8 +679,13 @@ html { scroll-padding-top: 80px; }
 .footer-col a:hover { background-size: 100% 1px; }
 .socials a { transition: background-color 0.2s ease, color 0.2s ease; }
 .socials a:hover { background: var(--paper); color: var(--ink); }
-.folder { transition: transform 0.2s ease; }
-.folder:hover { transform: translateY(-3px); }
+/* Folders open on hover: the lid tips forward, papers rise */
+.folder svg { overflow: visible; }
+.folder__sheet { fill: #fffdf8; stroke: #c9d2f5; stroke-width: 1; transform-box: fill-box; transition: transform 0.3s ease; }
+.folder__lid { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 0.3s cubic-bezier(0.3, 1.4, 0.5, 1); }
+.folder:hover .folder__lid { transform: scaleY(0.78) skewX(-8deg); }
+.folder:hover .folder__sheet { transform: translateY(-16px) rotate(-4deg); }
+.folder:hover .folder__sheet--2 { transform: translateY(-11px) rotate(3deg); }
 
 /* FAQ answers slide open where ::details-content is supported */
 .faq { interpolate-size: allow-keywords; }

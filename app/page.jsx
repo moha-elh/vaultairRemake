@@ -92,9 +92,13 @@ function Folder({ name, count }) {
     <div className="folder">
       <svg viewBox="0 0 100 80" aria-hidden="true">
         <path className="folder__back" d="M10 2h22c3 0 5 1 7 3l4 4h47a8 8 0 0 1 8 8v53a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8V10a8 8 0 0 1 8-8z" />
-        <rect className="folder__front" x="2" y="17" width="96" height="61" rx="8" />
-        <rect x="2" y="66" width="96" height="1.2" fill="#fff" opacity=".3" />
-        <rect x="2" y="70" width="96" height="1.2" fill="#fff" opacity=".22" />
+        <rect className="folder__sheet" x="12" y="20" width="70" height="50" rx="3" />
+        <rect className="folder__sheet folder__sheet--2" x="18" y="20" width="70" height="50" rx="3" />
+        <g className="folder__lid">
+          <rect className="folder__front" x="2" y="17" width="96" height="61" rx="8" />
+          <rect x="2" y="66" width="96" height="1.2" fill="#fff" opacity=".3" />
+          <rect x="2" y="70" width="96" height="1.2" fill="#fff" opacity=".22" />
+        </g>
       </svg>
       <span className="folder__name">{name}</span>
       <span className="folder__count">{count} items</span>
