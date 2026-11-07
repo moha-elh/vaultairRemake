@@ -239,6 +239,8 @@ h1, h2, h3, p { margin: 0; }
   text-align: center;
   gap: 28px;
   padding: 88px var(--pad-x) 0;
+  position: relative;
+  z-index: 1;
 }
 .hero__title { max-width: 1080px; text-wrap: balance; }
 .hero__eyebrow { font-size: 16px; color: var(--ink); }
@@ -254,7 +256,9 @@ h1, h2, h3, p { margin: 0; }
   color: var(--muted);
 }
 .hero__rating { display: inline-flex; align-items: center; gap: 6px; color: var(--ink); }
-.figure { margin: 24px 0 0; }
+.figure { margin: 0; }
+/* The hero art opens with ~36% empty paper sky: tuck that under the text */
+.hero .figure { margin-top: calc(min(100vw, var(--page-max)) * -0.15); }
 .figure__caption {
   display: flex;
   flex-wrap: wrap;
