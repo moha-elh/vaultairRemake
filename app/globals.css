@@ -246,14 +246,14 @@ h1, h2, h3, p { margin: 0; }
   z-index: 1;
 }
 .hero__title { max-width: 1080px; text-wrap: balance; }
-.hero__twist { position: relative; white-space: nowrap; color: var(--ink); }
+.hero__twist { position: relative; white-space: nowrap; }
 .hero__twist svg {
-  position: absolute; left: 0; bottom: -0.08em;
-  width: 100%; height: 0.18em; overflow: visible;
+  position: absolute; left: 0; bottom: 0.15em;
+  width: 100%; height: 0.12em; overflow: visible;
   fill: none; stroke: var(--seal); stroke-width: 3; stroke-linecap: round;
   vector-effect: non-scaling-stroke;
 }
-.hero__answer { display: block; margin-top: 0.14em; color: var(--seal); }
+.hero__answer { display: block; color: var(--seal); }
 .hero__eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; color: var(--ink); }
 .hero__stars { display: inline-flex; gap: 2px; font-size: 16px; color: var(--ink); }
 .hero__lead { font-size: 20px; max-width: 560px; }
