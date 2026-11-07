@@ -132,7 +132,15 @@ export default function Home() {
           <section className="section hero">
             <div className="hero__inner">
               <p className="hero__eyebrow">Local-first encrypted vault · iPhone &amp; iPad</p>
-              <h1 className="h-display hero__title">Your Hidden album isn’t <em>actually</em> hidden. Vaultaire is.</h1>
+              <h1 className="h-display hero__title">
+                Your Hidden album{" "}
+                <em className="hero__twist">
+                  isn’t actually
+                  <svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 14C60 6 120 5 180 9s90 4 117-3" /></svg>
+                </em>{" "}
+                hidden.
+                <span className="hero__answer">Vaultaire is.</span>
+              </h1>
               <p className="hero__lead">Your photos move into a vault only your pattern can open, encrypted on your phone. No account, no sign-up, no email.</p>
               <div className="hero__actions">
                 <a className="btn btn--ink" href={APP_STORE}><Icon name="download-simple" />Download free</a>

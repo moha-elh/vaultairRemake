@@ -12,6 +12,7 @@
   --text: #3d4260;         /* body */
   --muted: #5e6381;        /* secondary text */
   --rule-soft: rgba(30, 58, 167, 0.35);
+  --seal: #b0402a;         /* sealing-wax red: the one warm accent */
   --on-ink: #fcf2e2;
   --on-ink-body: #dce2f8;
   --on-ink-label: #c9d2f5;
@@ -241,6 +242,15 @@ h1, h2, h3, p { margin: 0; }
   z-index: 1;
 }
 .hero__title { max-width: 1080px; text-wrap: balance; }
+.hero__twist { position: relative; white-space: nowrap; color: var(--ink); }
+.hero__twist svg {
+  position: absolute; left: 0; bottom: -0.08em;
+  width: 100%; height: 0.18em; overflow: visible;
+  fill: none; stroke: var(--seal); stroke-width: 3; stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.hero__twist path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.hero__answer { display: block; margin-top: 0.14em; color: var(--seal); }
 .hero__eyebrow { font-size: 16px; color: var(--ink); }
 .hero__lead { font-size: 20px; max-width: 560px; }
 .hero__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
@@ -693,6 +703,7 @@ html { scroll-padding-top: 80px; }
   .hero__inner > :nth-child(4) { animation-delay: 0.24s; }
   .hero__inner > :nth-child(5) { animation-delay: 0.32s; }
   .hero .figure img { animation: develop 1.4s ease 0.2s both; }
+  .hero__twist path { animation: draw 0.9s ease-out 0.7s both; }
 
   /* Scroll reveals (only once JS has marked the page) */
   .js [data-reveal] {
@@ -710,6 +721,7 @@ html { scroll-padding-top: 80px; }
   .js .folders > div { opacity: 0; transform: scale(0.85); transition: opacity 0.4s ease, transform 0.4s ease; transition-delay: calc(0.3s + var(--i) * 60ms); }
   .js .is-in .folders > div { opacity: 1; transform: none; }
 }
+@keyframes draw { from { stroke-dashoffset: 1; } }
 @keyframes rise { from { opacity: 0; transform: translateY(20px); } }
 @keyframes develop { from { opacity: 0; filter: saturate(0) contrast(0.6); } }
 

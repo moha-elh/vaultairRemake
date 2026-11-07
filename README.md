@@ -27,6 +27,7 @@ design/               Original canvas sources and the old static version (static
 | `--paper` | `#fcf2e2` | Page background, sampled from the illustrations |
 | `--ink` | `#1e3aa7` | Rules, accents, filled cells, footer |
 | `--ink-deep` | `#142a86` | Headings |
+| `--seal` | `#b0402a` | The one warm accent: "Vaultaire is." and its underline |
 | `--text` / `--muted` | `#3d4260` / `#5e6381` | Body / secondary text |
 
 **Type:** Newsreader (semibold 600, roman + italic) for display text, labels, nav and buttons. Geist for body text. Geist Mono for code. All load from Google Fonts.
