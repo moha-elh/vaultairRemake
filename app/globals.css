@@ -602,8 +602,6 @@ h1, h2, h3, p { margin: 0; }
 }
 .footer-col h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 40px; border-bottom: 1px solid rgba(252, 242, 226, 0.5); }
 .footer-art { width: 100%; height: auto; }
-/* Its top is flat ink sky (castle peaks start ~9vw down), the same blue as the footer: slide it under the text */
-.footer-art { margin-top: -7vw; }
 .footer-bar {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
   padding-block: 16px;

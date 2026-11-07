@@ -3,7 +3,7 @@ import Icons, { Icon } from "./Icons";
 import Reveal from "./Reveal";
 import hero from "../public/img/hero.png";
 import keeper from "../public/img/keeper.jpg";
-import roadHome from "../public/img/road-home.jpg";
+import roadHome from "../public/img/road-home-footer.jpg";
 
 const APP_STORE = "https://vaultaire.app/go/app-store?ct=web_home";
 
