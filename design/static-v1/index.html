@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaultaire — Local-first encrypted vault for iPhone &amp; iPad</title>
+  <meta name="description" content="Your Hidden album isn’t actually hidden. Vaultaire is. A local-first, AES-256 encrypted vault for iPhone and iPad, unlocked by a pattern. No account.">
+  <meta name="theme-color" content="#1e3aa7">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!-- Icons: Phosphor Icons (Bold), MIT License — https://phosphoricons.com -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"/></symbol>
+  <symbol id="i-calculator" viewBox="0 0 256 256"><path d="M200,20H56A20,20,0,0,0,36,40V216a20,20,0,0,0,20,20H200a20,20,0,0,0,20-20V40A20,20,0,0,0,200,20Zm-4,192H60V44H196ZM80,76A12,12,0,0,1,92,64h72a12,12,0,0,1,0,24H92A12,12,0,0,1,80,76Zm40,52a16,16,0,1,1-16-16A16,16,0,0,1,120,128Zm48,0a16,16,0,1,1-16-16A16,16,0,0,1,168,128Zm-48,48a16,16,0,1,1-16-16A16,16,0,0,1,120,176Zm48,0a16,16,0,1,1-16-16A16,16,0,0,1,168,176Z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 256 256"><path d="M208,52H182.42L170,33.34A12,12,0,0,0,160,28H96a12,12,0,0,0-10,5.34L73.57,52H48A28,28,0,0,0,20,80V192a28,28,0,0,0,28,28H208a28,28,0,0,0,28-28V80A28,28,0,0,0,208,52Zm4,140a4,4,0,0,1-4,4H48a4,4,0,0,1-4-4V80a4,4,0,0,1,4-4H80a12,12,0,0,0,10-5.34L102.42,52h51.15L166,70.66A12,12,0,0,0,176,76h32a4,4,0,0,1,4,4ZM128,84a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,84Zm0,72a24,24,0,1,1,24-24A24,24,0,0,1,128,156Z"/></symbol>
+  <symbol id="i-cloud-check" viewBox="0 0 256 256"><path d="M160,36A92.09,92.09,0,0,0,79,84.36,68,68,0,1,0,72,220h88a92,92,0,0,0,0-184Zm0,160H72a44,44,0,0,1-1.82-88A91.86,91.86,0,0,0,68,128a12,12,0,0,0,24,0,68,68,0,1,1,68,68Zm40.49-92.49a12,12,0,0,1,0,17l-48,48a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L144,143l39.51-39.52A12,12,0,0,1,200.49,103.51Z"/></symbol>
+  <symbol id="i-devices" viewBox="0 0 256 256"><path d="M224,72H212V64a28,28,0,0,0-28-28H40A28,28,0,0,0,12,64v88a28,28,0,0,0,28,28h96v12a28,28,0,0,0,28,28h60a28,28,0,0,0,28-28V100A28,28,0,0,0,224,72ZM40,156a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4H184a4,4,0,0,1,4,4v8H164a28,28,0,0,0-28,28v56Zm188,36a4,4,0,0,1-4,4H164a4,4,0,0,1-4-4V100a4,4,0,0,1,4-4h60a4,4,0,0,1,4,4ZM124,208a12,12,0,0,1-12,12H88a12,12,0,0,1,0-24h24A12,12,0,0,1,124,208Zm88-84a12,12,0,0,1-12,12H188a12,12,0,0,1,0-24h12A12,12,0,0,1,212,124Z"/></symbol>
+  <symbol id="i-discord-logo" viewBox="0 0 256 256"><path d="M108,136a16,16,0,1,1-16-16A16,16,0,0,1,108,136Zm56-16a16,16,0,1,0,16,16A16,16,0,0,0,164,120Zm76.07,76.56-67,29.71A20.15,20.15,0,0,1,146,214.9l-8.54-23.13c-3.13.14-6.27.24-9.45.24s-6.32-.1-9.45-.24L110,214.9a20.19,20.19,0,0,1-27.08,11.37l-67-29.71A19.93,19.93,0,0,1,4.62,173.41L34.15,57A20,20,0,0,1,50.37,42.19l36.06-5.93A20.26,20.26,0,0,1,109.22,51.1l4.41,17.41c4.74-.33,9.52-.51,14.37-.51s9.63.18,14.37.51l4.41-17.41a20.25,20.25,0,0,1,22.79-14.84l36.06,5.93A20,20,0,0,1,221.85,57l29.53,116.38A19.93,19.93,0,0,1,240.07,196.56ZM227.28,176,199.23,65.46l-30.07-4.94-2.84,11.17c2.9.58,5.78,1.2,8.61,1.92a12,12,0,1,1-5.86,23.27A168.43,168.43,0,0,0,128,92a168.43,168.43,0,0,0-41.07,4.88,12,12,0,0,1-5.86-23.27c2.83-.72,5.71-1.34,8.61-1.92L86.85,60.52,56.77,65.46,28.72,176l60.22,26.7,5-13.57c-4.37-.76-8.67-1.65-12.88-2.71a12,12,0,0,1,5.86-23.28A168.43,168.43,0,0,0,128,168a168.43,168.43,0,0,0,41.07-4.88,12,12,0,0,1,5.86,23.28c-4.21,1.06-8.51,1.95-12.88,2.71l5,13.57Z"/></symbol>
+  <symbol id="i-dots-nine" viewBox="0 0 256 256"><path d="M76,60A16,16,0,1,1,60,44,16,16,0,0,1,76,60Zm52-16a16,16,0,1,0,16,16A16,16,0,0,0,128,44Zm68,32a16,16,0,1,0-16-16A16,16,0,0,0,196,76ZM60,112a16,16,0,1,0,16,16A16,16,0,0,0,60,112Zm68,0a16,16,0,1,0,16,16A16,16,0,0,0,128,112Zm68,0a16,16,0,1,0,16,16A16,16,0,0,0,196,112ZM60,180a16,16,0,1,0,16,16A16,16,0,0,0,60,180Zm68,0a16,16,0,1,0,16,16A16,16,0,0,0,128,180Zm68,0a16,16,0,1,0,16,16A16,16,0,0,0,196,180Z"/></symbol>
+  <symbol id="i-download-simple" viewBox="0 0 256 256"><path d="M228,144v64a12,12,0,0,1-12,12H40a12,12,0,0,1-12-12V144a12,12,0,0,1,24,0v52H204V144a12,12,0,0,1,24,0Zm-108.49,8.49a12,12,0,0,0,17,0l40-40a12,12,0,0,0-17-17L140,115V32a12,12,0,0,0-24,0v83L96.49,95.51a12,12,0,0,0-17,17Z"/></symbol>
+  <symbol id="i-envelope-simple-open" viewBox="0 0 256 256"><path d="M230.66,86l-96-64a12,12,0,0,0-13.32,0l-96,64A12,12,0,0,0,20,96V200a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V96A12,12,0,0,0,230.66,86ZM128,46.42l74.86,49.91L141.61,140H114.39L53.14,96.33ZM44,196V119.29l59.58,42.48a12,12,0,0,0,7,2.23h34.9a12,12,0,0,0,7-2.23L212,119.29V196Z"/></symbol>
+  <symbol id="i-eye-slash" viewBox="0 0 256 256"><path d="M56.88,31.93A12,12,0,1,0,39.12,48.07l16,17.65C20.67,88.66,5.72,121.58,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212a131.34,131.34,0,0,0,51-10l20.09,22.1a12,12,0,0,0,17.76-16.14ZM128,188c-29.59,0-55.47-10.73-76.91-31.88A130.69,130.69,0,0,1,29.52,128c5.27-9.31,18.79-29.9,42-44.29l90.09,99.11A109.33,109.33,0,0,1,128,188Zm123-55.12c-.36.81-9,20-28,39.16a12,12,0,1,1-17-16.9A130.48,130.48,0,0,0,226.48,128a130.36,130.36,0,0,0-21.57-28.12C183.46,78.73,157.59,68,128,68c-3.35,0-6.7.14-10,.42a12,12,0,1,1-2-23.91c3.93-.34,8-.51,12-.51,36,0,68.63,13.67,94.49,39.52,19.35,19.35,28.11,38.8,28.48,39.61A12.08,12.08,0,0,1,251,132.88Z"/></symbol>
+  <symbol id="i-folder-plus" viewBox="0 0 256 256"><path d="M216,68H133.39l-26-29.29a20,20,0,0,0-15-6.71H40A20,20,0,0,0,20,52V200.62A19.41,19.41,0,0,0,39.38,220H216.89A19.13,19.13,0,0,0,236,200.89V88A20,20,0,0,0,216,68ZM90.61,56l10.67,12H44V56ZM212,196H44V92H212Zm-72-76v12h12a12,12,0,0,1,0,24H140v12a12,12,0,0,1-24,0V156H104a12,12,0,0,1,0-24h12V120a12,12,0,0,1,24,0Z"/></symbol>
+  <symbol id="i-hand-tap" viewBox="0 0 256 256"><path d="M228,156v36c0,13.85-1.63,26.52-4.58,35.68a12,12,0,1,1-22.84-7.36c2.14-6.65,3.42-17.24,3.42-28.32V156a8,8,0,0,0-16,0v4a12,12,0,0,1-24,0V140a8,8,0,0,0-16,0v12a12,12,0,0,1-24,0V84a8,8,0,0,0-16,0V192a12,12,0,0,1-22.18,6.34l-18.68-30-.21-.34A8,8,0,0,0,53,175.92L78.27,217.8a12,12,0,0,1-20.56,12.39l-25.31-42-.12-.2A32,32,0,0,1,84,150.83V84a32,32,0,0,1,64,0v25a32,32,0,0,1,36.78,17A32,32,0,0,1,228,156ZM56,96A12,12,0,0,0,68,84a48,48,0,0,1,96,0,12,12,0,0,0,24,0A72,72,0,0,0,44,84,12,12,0,0,0,56,96Z"/></symbol>
+  <symbol id="i-hard-drives" viewBox="0 0 256 256"><path d="M208,36H48A20,20,0,0,0,28,56V200a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V56A20,20,0,0,0,208,36Zm-4,24v56H52V60ZM52,196V140H204v56ZM160,88a16,16,0,1,1,16,16A16,16,0,0,1,160,88Zm32,80a16,16,0,1,1-16-16A16,16,0,0,1,192,168Z"/></symbol>
+  <symbol id="i-key" viewBox="0 0 256 256"><path d="M196,76a16,16,0,1,1-16-16A16,16,0,0,1,196,76Zm48,22.74A84.3,84.3,0,0,1,160.11,180H160a83.52,83.52,0,0,1-23.65-3.38l-7.86,7.87A12,12,0,0,1,120,188H108v12a12,12,0,0,1-12,12H84v12a12,12,0,0,1-12,12H40a20,20,0,0,1-20-20V187.31a19.86,19.86,0,0,1,5.86-14.14l53.52-53.52A84,84,0,1,1,244,98.74ZM202.43,53.57A59.48,59.48,0,0,0,158,36c-32,1-58,27.89-58,59.89a59.69,59.69,0,0,0,4.2,22.19,12,12,0,0,1-2.55,13.21L44,189v23H60V200a12,12,0,0,1,12-12H84V176a12,12,0,0,1,12-12h19l9.65-9.65a12,12,0,0,1,13.22-2.55A59.58,59.58,0,0,0,160,156h.08c32,0,58.87-26.07,59.89-58A59.55,59.55,0,0,0,202.43,53.57Z"/></symbol>
+  <symbol id="i-list-dashes" viewBox="0 0 256 256"><path d="M84,64A12,12,0,0,1,96,52H216a12,12,0,0,1,0,24H96A12,12,0,0,1,84,64Zm132,52H96a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Zm0,64H96a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24ZM56,52H40a12,12,0,0,0,0,24H56a12,12,0,0,0,0-24Zm0,64H40a12,12,0,0,0,0,24H56a12,12,0,0,0,0-24Zm0,64H40a12,12,0,0,0,0,24H56a12,12,0,0,0,0-24Z"/></symbol>
+  <symbol id="i-lock-key" viewBox="0 0 256 256"><path d="M208,76H180V56A52,52,0,0,0,76,56V76H48A20,20,0,0,0,28,96V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V96A20,20,0,0,0,208,76ZM100,56a28,28,0,0,1,56,0V76H100ZM204,204H52V100H204Zm-76-92a32,32,0,0,0-12,61.66V180a12,12,0,0,0,24,0v-6.34A32,32,0,0,0,128,112Zm0,24a8,8,0,1,1-8,8A8,8,0,0,1,128,136Z"/></symbol>
+  <symbol id="i-mask-happy" viewBox="0 0 256 256"><path d="M219.29,31.5a20,20,0,0,0-18.52-2.14C187,34.72,159.17,43.7,128,43.7s-59-9-72.77-14.34A20,20,0,0,0,28,48v55.77c0,36.64,9.9,71.25,27.88,97.45C74.81,228.81,100.42,244,128,244s53.19-15.19,72.12-42.76C218.1,175,228,140.43,228,103.79V48A20,20,0,0,0,219.29,31.5ZM204,103.79c0,31.84-8.41,61.63-23.67,83.87C166,208.51,147.43,220,128,220s-38-11.49-52.33-32.34C60.41,165.42,52,135.63,52,103.79v-50c16.59,5.95,44.67,13.94,76,13.94s59.41-8,76-13.94Zm-38.67,62.88a12,12,0,0,1-1.79,16.87,56.92,56.92,0,0,1-71.08,0,12,12,0,0,1,15.08-18.67,32.92,32.92,0,0,0,40.92,0A12,12,0,0,1,165.33,166.67Zm-27.44-35.51a12,12,0,0,1,3.61-16.58,41.66,41.66,0,0,1,39.23-3.06,12,12,0,1,1-9.46,22.06A19.53,19.53,0,0,0,164,132a19.14,19.14,0,0,0-9.52,2.77,12,12,0,0,1-16.59-3.61ZM92,132a19.44,19.44,0,0,0-7.27,1.59,12,12,0,0,1-9.46-22.06,41.61,41.61,0,0,1,39.23,3,12,12,0,1,1-13,20.19A19.21,19.21,0,0,0,92,132Z"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128Z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"/></symbol>
+  <symbol id="i-share-network" viewBox="0 0 256 256"><path d="M176,156a43.78,43.78,0,0,0-29.09,11L106.1,140.8a44.07,44.07,0,0,0,0-25.6L146.91,89a43.83,43.83,0,1,0-13-20.17L93.09,95a44,44,0,1,0,0,65.94L133.9,187.2A44,44,0,1,0,176,156Zm0-120a20,20,0,1,1-20,20A20,20,0,0,1,176,36ZM64,148a20,20,0,1,1,20-20A20,20,0,0,1,64,148Zm112,72a20,20,0,1,1,20-20A20,20,0,0,1,176,220Z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 256 256"><path d="M208,36H48A20,20,0,0,0,28,56v56c0,54.29,26.32,87.22,48.4,105.29,23.71,19.39,47.44,26,48.44,26.29a12.1,12.1,0,0,0,6.32,0c1-.28,24.73-6.9,48.44-26.29,22.08-18.07,48.4-51,48.4-105.29V56A20,20,0,0,0,208,36Zm-4,76c0,35.71-13.09,64.69-38.91,86.15A126.28,126.28,0,0,1,128,219.38a126.14,126.14,0,0,1-37.09-21.23C65.09,176.69,52,147.71,52,112V60H204ZM79.51,144.49a12,12,0,1,1,17-17L112,143l47.51-47.52a12,12,0,0,1,17,17l-56,56a12,12,0,0,1-17,0Z"/></symbol>
+  <symbol id="i-siren" viewBox="0 0 256 256"><path d="M116,20V12a12,12,0,0,1,24,0v8a12,12,0,0,1-24,0Zm84,36a12,12,0,0,0,8.49-3.51l8-8a12,12,0,1,0-17-17l-8,8A12,12,0,0,0,200,56ZM47.51,52.49a12,12,0,0,0,17-17l-8-8a12,12,0,0,0-17,17ZM236,176v24a20,20,0,0,1-20,20H40a20,20,0,0,1-20-20V176a20,20,0,0,1,16-19.6V140a92,92,0,0,1,92-92h.71C179,48.38,220,90.1,220,141v15.4A20,20,0,0,1,236,176ZM60,140v16H196V141c0-37.77-30.27-68.72-67.48-69H128a68,68,0,0,0-68,68Zm152,40H44v16H212Zm-75.6-66.72a28,28,0,0,1,18.32,18.32,12,12,0,0,0,22.9-7.2,52,52,0,0,0-34-34,12,12,0,0,0-7.2,22.9Z"/></symbol>
+  <symbol id="i-squares-four" viewBox="0 0 256 256"><path d="M100,36H56A20,20,0,0,0,36,56v44a20,20,0,0,0,20,20h44a20,20,0,0,0,20-20V56A20,20,0,0,0,100,36ZM96,96H60V60H96ZM200,36H156a20,20,0,0,0-20,20v44a20,20,0,0,0,20,20h44a20,20,0,0,0,20-20V56A20,20,0,0,0,200,36Zm-4,60H160V60h36Zm-96,40H56a20,20,0,0,0-20,20v44a20,20,0,0,0,20,20h44a20,20,0,0,0,20-20V156A20,20,0,0,0,100,136Zm-4,60H60V160H96Zm104-60H156a20,20,0,0,0-20,20v44a20,20,0,0,0,20,20h44a20,20,0,0,0,20-20V156A20,20,0,0,0,200,136Zm-4,60H160V160h36Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 256 256"><path d="M243,96a20.33,20.33,0,0,0-17.74-14l-56.59-4.57L146.83,24.62a20.36,20.36,0,0,0-37.66,0L87.35,77.44,30.76,82A20.45,20.45,0,0,0,19.1,117.88l43.18,37.24-13.2,55.7A20.37,20.37,0,0,0,79.57,233L128,203.19,176.43,233a20.39,20.39,0,0,0,30.49-22.15l-13.2-55.7,43.18-37.24A20.43,20.43,0,0,0,243,96ZM172.53,141.7a12,12,0,0,0-3.84,11.86L181.58,208l-47.29-29.08a12,12,0,0,0-12.58,0L74.42,208l12.89-54.4a12,12,0,0,0-3.84-11.86L41.2,105.24l55.4-4.47a12,12,0,0,0,10.13-7.38L128,41.89l21.27,51.5a12,12,0,0,0,10.13,7.38l55.4,4.47Z"/></symbol>
+  <symbol id="i-user-circle-dashed" viewBox="0 0 256 256"><path d="M92.38,38.05A12,12,0,0,1,101,23.42a108,108,0,0,1,54,0,12,12,0,1,1-6,23.23,84,84,0,0,0-42,0A12,12,0,0,1,92.38,38.05ZM32.29,113.87a12.2,12.2,0,0,0,3.2.43,12,12,0,0,0,11.56-8.8,84,84,0,0,1,21-36.35A12,12,0,1,0,50.94,52.34a108.1,108.1,0,0,0-27,46.76A12,12,0,0,0,32.29,113.87ZM149,209.35a84,84,0,0,1-42,0,12,12,0,1,0-6,23.23,108,108,0,0,0,54,0,12,12,0,1,0-6-23.23Zm59.95-103.83a12,12,0,0,0,23.12-6.42,108,108,0,0,0-27-46.78A12,12,0,1,0,188,69.15,84,84,0,0,1,208.94,105.52Zm23.15,51.39a107.86,107.86,0,0,1-31.86,51.38,12,12,0,0,1-18.72-3.48,60,60,0,0,0-107,0,12,12,0,0,1-8.5,6.36,12.48,12.48,0,0,1-2.19.2,12,12,0,0,1-8-3.08A107.85,107.85,0,0,1,23.91,156.9,12,12,0,0,1,47,150.49,83.58,83.58,0,0,0,62,180a83.46,83.46,0,0,1,29-23.47,52,52,0,1,1,74,0A83.59,83.59,0,0,1,194,180a83.73,83.73,0,0,0,15-29.49,12,12,0,0,1,23.13,6.42ZM128,148a28,28,0,1,0-28-28A28,28,0,0,0,128,148Z"/></symbol>
+  <symbol id="i-x-logo" viewBox="0 0 256 256"><path d="M218.12,209.56l-61-95.8,59.72-65.69a12,12,0,0,0-17.76-16.14L143.81,92.77,106.12,33.56A12,12,0,0,0,96,28H48A12,12,0,0,0,37.88,46.44l61,95.8L39.12,207.93a12,12,0,1,0,17.76,16.14l55.31-60.84,37.69,59.21A12,12,0,0,0,160,228h48a12,12,0,0,0,10.12-18.44ZM166.59,204,69.86,52H89.41l96.73,152Z"/></symbol>
+</svg>
+
+<div class="page">
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Vaultaire home">
+      <svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><rect x="0.5" y="0.5" width="39" height="39" fill="#1e3aa7"/><path d="M9 11h7l4 11 4-11h7L23 31h-6z" fill="#fcf2e2"/></svg>
+      Vaultaire
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#security">Security</a>
+      <a href="#plans">Plans</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="header-cta" href="https://vaultaire.app/go/app-store?ct=web_header_nav">
+      Get the app <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+    </a>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section id="top" class="section hero">
+      <div class="hero__inner">
+        <p class="label">Local-first encrypted vault · iPhone &amp; iPad</p>
+        <h1 class="h-display hero__title">Your Hidden album isn’t <em>actually</em> hidden. Vaultaire is.</h1>
+        <p class="hero__lead">Your photos move into a vault only your pattern can open — encrypted on your phone. No account, no sign-up, no email.</p>
+        <div class="hero__actions">
+          <a class="btn btn--ink" href="https://vaultaire.app/go/app-store?ct=web_home">
+            <svg class="icon" aria-hidden="true"><use href="#i-download-simple"/></svg>Download free
+          </a>
+          <a class="btn btn--outline" href="#how">See how it works</a>
+        </div>
+        <div class="hero__meta">
+          <span class="hero__rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>4.7 on the App Store</span>
+          <span>AES-256-GCM</span>
+          <span>Zero accounts</span>
+        </div>
+      </div>
+      <figure class="figure">
+        <img src="assets/img/hill-vault.jpg" width="1672" height="941" fetchpriority="high"
+             alt="Engraving of a walled hilltop citadel with a great round vault door cut into the cliff, above a calm sea; in the sky, a 5×5 grid of stars traces an unlock pattern.">
+        <figcaption class="figure__caption"><span>Fig. I — The pattern is the key</span><span>Six dots · one turn · 256 bits</span></figcaption>
+      </figure>
+    </section>
+
+    <!-- ===== Trust strip ===== -->
+    <section class="section cells trust" aria-label="What Vaultaire is built without">
+      <div class="cell"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-user-circle-dashed"/></svg></span><div><div class="trust__title">No accounts</div><div class="trust__sub">Nothing to sign up for</div></div></div>
+      <div class="cell"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-envelope-simple-open"/></svg></span><div><div class="trust__title">No email required</div><div class="trust__sub">Or phone number</div></div></div>
+      <div class="cell"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg></span><div><div class="trust__title">No backdoors</div><div class="trust__sub">We don’t store keys</div></div></div>
+      <div class="cell"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-cloud-check"/></svg></span><div><div class="trust__title">Encrypted before iCloud</div><div class="trust__sub">Servers see ciphertext only</div></div></div>
+    </section>
+
+    <!-- ===== 01 Problem ===== -->
+    <section class="section" aria-labelledby="problem-title">
+      <div class="keeper">
+        <div class="keeper__text">
+          <p class="label">01 // The problem</p>
+          <h2 id="problem-title" class="h-section">Someone takes your phone. <em>Now what?</em></h2>
+          <p>Hidden folders and calculator disguises hide things from a glance — not from a person holding your unlocked phone.</p>
+        </div>
+        <img class="keeper__img" src="assets/img/keeper.jpg" width="1672" height="941" loading="lazy"
+             alt="Engraving of a robed figure turning a key in an iron-bound chest, with photographs, a sealed scroll, an inkwell and a potted plant on the table.">
+      </div>
+      <div class="cells problems">
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title"><span>01 //</span> A Hidden album is a label, not a lock</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-eye-slash"/></svg></div>
+          <p class="cell__body">Anyone with your unlocked phone can open it in a couple of taps.</p>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title"><span>02 //</span> Calculator disguises are a costume</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-calculator"/></svg></div>
+          <p class="cell__body">Once someone knows the trick, everything behind it is in plain view.</p>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title"><span>03 //</span> Vault lists give you away</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-list-dashes"/></svg></div>
+          <p class="cell__body">Vaultaire never opens to a list of named vaults — only a pattern grid.</p>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title"><span>04 //</span> Servers are someone else’s computer</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-hard-drives"/></svg></div>
+          <p class="cell__body">Everything is encrypted on-device first. No server ever receives your keys.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 02 The math behind the lock ===== -->
+    <section class="section" aria-labelledby="math-title">
+      <div class="section-head">
+        <div>
+          <p class="label">02 // Under the hood</p>
+          <h2 id="math-title" class="h-section">The math behind <em>the lock.</em></h2>
+        </div>
+        <p>Everything is encrypted on your phone before it goes anywhere. Lock it, and the active key state is gone.</p>
+      </div>
+      <div class="math">
+        <div class="cells stats">
+          <div class="cell stat">
+            <div class="cell__head"><span class="cell__title">01 //</span><svg class="icon cell__icon" aria-hidden="true"><use href="#i-lock-key"/></svg></div>
+            <div><div class="stat__value">AES-256</div><div class="stat__label">GCM, for every file</div></div>
+          </div>
+          <div class="cell stat">
+            <div class="cell__head"><span class="cell__title">02 //</span><svg class="icon cell__icon" aria-hidden="true"><use href="#i-key"/></svg></div>
+            <div><div class="stat__value">600k</div><div class="stat__label">PBKDF2 iterations</div></div>
+          </div>
+          <div class="cell stat">
+            <div class="cell__head"><span class="cell__title">03 //</span><svg class="icon cell__icon" aria-hidden="true"><use href="#i-list-dashes"/></svg></div>
+            <div><div class="stat__value">9 words</div><div class="stat__label">Recovery phrase</div></div>
+          </div>
+          <div class="cell stat">
+            <div class="cell__head"><span class="cell__title">04 //</span><svg class="icon cell__icon" aria-hidden="true"><use href="#i-user-circle-dashed"/></svg></div>
+            <div><div class="stat__value">Zero</div><div class="stat__label">Accounts or emails</div></div>
+          </div>
+        </div>
+
+        <div class="duress">
+          <p class="label"><svg class="icon" aria-hidden="true"><use href="#i-siren"/></svg>Duress Mode · Pro</p>
+          <h3 class="duress__title">Forced to <em>unlock?</em></h3>
+          <p>Draw your duress pattern. One vault opens; the others are silently removed from the device. Your cloud backup stays recoverable with your phrase.</p>
+          <a class="btn btn--paper btn--sm" href="https://vaultaire.app/go/app-store?ct=web_home">Get Vaultaire Pro <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+
+          <!-- Phone mockup: vault screen -->
+          <div class="phone" aria-hidden="true">
+            <div class="phone__screen">
+              <div class="phone__island"></div>
+              <div class="phone__bar"><span>Vaults</span><span class="phone__add"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></div>
+              <div>
+                <div class="phone__title">Vault</div>
+                <div class="phone__sub">9 folders · AES-256-GCM</div>
+              </div>
+              <div class="folders" data-folders></div>
+              <div class="phone__lock"><svg class="icon" aria-hidden="true"><use href="#i-lock-key"/></svg>Lock &amp; vanish</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 Features ===== -->
+    <section id="features" class="section" aria-labelledby="features-title">
+      <div class="section-head">
+        <div>
+          <p class="label">03 // Features</p>
+          <h2 id="features-title" class="h-section">Twelve ways to <em>keep a secret.</em></h2>
+        </div>
+        <p>Zero-knowledge by design. Your files never leave your device unencrypted.</p>
+      </div>
+      <div class="cells features">
+        <article class="cell cell--ink">
+          <div class="cell__head"><h3 class="cell__title">01 // Pattern Encryption</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-dots-nine"/></svg></div>
+          <p class="cell__body">Draw on a 5×5 grid. PBKDF2 turns it into a 256-bit key that unwraps your vault’s random master key.</p>
+          <span class="cell__tag">Core</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">02 // Secret Phrase</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-key"/></svg></div>
+          <p class="cell__body">A nine-word recovery phrase — or your own — opens a separate encrypted envelope if you forget your pattern.</p>
+          <span class="cell__tag">Core</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">03 // Plausible Deniability</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-mask-happy"/></svg></div>
+          <p class="cell__body">Different patterns open different vaults. No picker, no list — nothing on screen says another vault exists.</p>
+          <span class="cell__tag">Core</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">04 // Hidden Vaults</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-eye-slash"/></svg></div>
+          <p class="cell__body">The unlock screen never lists vaults, and file names on disk never reveal which vault they belong to.</p>
+          <span class="cell__tag">Core</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">05 // Duress Mode</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-siren"/></svg></div>
+          <p class="cell__body">A special pattern opens one vault and silently removes the others from the device. Cloud backups stay recoverable.</p>
+          <span class="cell__tag cell__tag--pro">Pro</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">06 // iCloud Backup</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-cloud-check"/></svg></div>
+          <p class="cell__body">On by default. A separate pattern-derived key encrypts padded records before CloudKit ever sees them.</p>
+          <span class="cell__tag">Free + Pro</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">07 // Secure Sharing</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-share-network"/></svg></div>
+          <p class="cell__body">Share a vault with a secret phrase. Limit opens, set an expiry, block export.</p>
+          <span class="cell__tag cell__tag--pro">Pro to create · free to open</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">08 // Device Sync</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-devices"/></svg></div>
+          <p class="cell__body">The same vault on iPhone and iPad — encrypted on-device before iCloud receives it.</p>
+          <span class="cell__tag cell__tag--pro">Pro</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">09 // Secure Camera</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-camera"/></svg></div>
+          <p class="cell__body">Shoot photos and video straight into the vault. Nothing touches your camera roll.</p>
+          <span class="cell__tag">Core</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">10 // App Icons</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-squares-four"/></svg></div>
+          <p class="cell__body">Swap the icon for Calculator, Printer or five other utilities. Add a custom-named tile on iOS 18.</p>
+          <span class="cell__tag cell__tag--pro">Pro</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">11 // Architecture</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-shield-check"/></svg></div>
+          <p class="cell__body">AES-256-GCM for files, metadata, thumbnails, indexes and key wrappers. Separate vault, backup and recovery keys.</p>
+          <span class="cell__tag">Core</span>
+        </article>
+        <article class="cell">
+          <div class="cell__head"><h3 class="cell__title">12 // Ease of Use</h3><svg class="icon cell__icon" aria-hidden="true"><use href="#i-hand-tap"/></svg></div>
+          <p class="cell__body">No setup wizard. AES-256 encryption that feels like unlocking your phone.</p>
+          <span class="cell__tag">Core</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 04 How it works ===== -->
+    <section id="how" class="section" aria-labelledby="how-title">
+      <div class="section-head">
+        <div>
+          <p class="label">04 // How it works</p>
+          <h2 id="how-title" class="h-section">From pattern to ciphertext <em>in three moves.</em></h2>
+        </div>
+      </div>
+      <div class="cells steps">
+        <article class="cell step">
+          <div class="cell__head">
+            <span class="step__num">I.</span>
+            <span class="step__visual step__visual--bare">
+              <svg width="112" height="112" viewBox="0 0 112 112" aria-hidden="true">
+                <g fill="#d5ccc0" data-dot-grid></g>
+                <polyline points="12,12 34,12 56,12 78,12 78,34 78,56 56,78 34,100" fill="none" stroke="#1e3aa7" stroke-width="2.5"/>
+                <g fill="#1e3aa7"><rect x="8" y="8" width="8" height="8"/><rect x="30" y="96" width="8" height="8"/></g>
+              </svg>
+            </span>
+          </div>
+          <h3 class="step__title">Draw your pattern</h3>
+          <p>At least six dots and one change of direction on a 5×5 grid. That’s your key — nothing to type, nothing to remember on paper.</p>
+          <div class="step__tech">PBKDF2 · DEVICE-WIDE KEYCHAIN SALT</div>
+        </article>
+        <article class="cell step">
+          <div class="cell__head">
+            <span class="step__num">II.</span>
+            <span class="step__visual"><svg class="icon" aria-hidden="true"><use href="#i-folder-plus"/></svg></span>
+          </div>
+          <h3 class="step__title">Load the vault</h3>
+          <p>Import photos, videos, documents and notes — or shoot straight into it with the secure camera.</p>
+          <div class="step__tech">AES-256-GCM · ENCRYPTED ON ENTRY</div>
+        </article>
+        <article class="cell cell--ink step">
+          <div class="cell__head">
+            <span class="step__num">III.</span>
+            <span class="step__visual"><svg class="icon" aria-hidden="true"><use href="#i-lock-key"/></svg></span>
+          </div>
+          <h3 class="step__title">Lock &amp; vanish</h3>
+          <p>Locking discards the active key state. What’s left on the device is ciphertext — and an unlock screen that lists nothing.</p>
+          <div class="step__tech">KEY STATE DISCARDED ON LOCK</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 05 Security ===== -->
+    <section id="security" class="section security" aria-labelledby="security-title">
+      <div class="security__copy">
+        <p class="label">05 // Security model</p>
+        <h2 id="security-title" class="h-section">We don’t trust servers. <em>We trust math.</em></h2>
+        <dl class="spec">
+          <div class="spec__row"><dt>Files</dt><dd>AES-256-GCM — content, thumbnails, indexes</dd></div>
+          <div class="spec__row"><dt>Keys</dt><dd>PBKDF2-HMAC-SHA512 · 600,000 iterations</dd></div>
+          <div class="spec__row"><dt>Metadata</dt><dd>Authenticated AES-256-GCM</dd></div>
+          <div class="spec__row"><dt>Cloud</dt><dd>Encrypted on device before iCloud receives it</dd></div>
+        </dl>
+      </div>
+      <div class="security__code">
+        <div class="code">
+          <div class="code__bar"><span>vault.config</span><span>read-only</span></div>
+<pre><code>{
+  cipher:        "AES-256-GCM",
+  kdf:           "PBKDF2-HMAC-SHA512",
+  iterations:    600000,
+  icloud_backup: true,
+  account:       null
+}
+<span class="comment">// Servers never receive your keys.
+// Only your pattern or phrase decrypts.</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 06 Plans ===== -->
+    <section id="plans" class="section" aria-labelledby="plans-title">
+      <div class="section-head">
+        <div>
+          <p class="label">06 // Plans</p>
+          <h2 id="plans-title" class="h-section">Start free. <em>Go Pro</em> when you need more.</h2>
+        </div>
+      </div>
+      <div class="cells plans">
+        <div class="cell plan">
+          <p class="label">Free</p>
+          <div class="plan__price">$0</div>
+          <ul class="checklist">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Up to 3 vaults</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>100 photos + 10 videos total</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Pattern encryption &amp; recovery phrase</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Encrypted iCloud backup</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Secure camera</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Open shared vaults</li>
+          </ul>
+          <a class="btn btn--outline" href="https://vaultaire.app/go/app-store?ct=web_home">Download free</a>
+        </div>
+        <div class="cell cell--ink plan">
+          <div class="plan__head label"><span>Vaultaire Pro</span><span>Unlimited</span></div>
+          <!-- TODO: real price from the App Store listing -->
+          <div class="plan__price">[PRO PRICE]</div>
+          <ul class="checklist">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Unlimited vaults &amp; files</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Duress Mode</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Device Sync — iPhone + iPad</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Create secure shares with limits &amp; expiry</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Disguised app icons</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Everything in Free</li>
+          </ul>
+          <a class="btn btn--paper" href="https://vaultaire.app/go/app-store?ct=web_home">Get Vaultaire Pro</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 07 FAQ ===== -->
+    <section id="faq" class="section cells faq-wrap" aria-labelledby="faq-title">
+      <div class="cell faq-intro">
+        <p class="label">07 // Questions</p>
+        <h2 id="faq-title" class="h-section">Asked, <em>answered.</em></h2>
+        <nav class="compare" aria-label="Comparisons">
+          <div class="label compare__label">How Vaultaire compares</div>
+          <a href="https://vaultaire.app/compare/">vs Apple Hidden Album <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://vaultaire.app/compare/">vs Keepsafe <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://vaultaire.app/compare/">vs Private Photo Vault <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://vaultaire.app/compare/">vs Calculator apps <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </nav>
+      </div>
+      <div class="cell faq" data-accordion>
+        <details open><summary>What is Vaultaire?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>A local-first encrypted vault for iPhone and iPad. Files are encrypted with AES-256-GCM under a random master key, unlocked by a pattern you draw. No account.</p></details>
+        <details><summary>What if I forget my pattern?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>Use your nine-word recovery phrase to regain access. Without the pattern or the phrase, nobody — including us — can decrypt your vault.</p></details>
+        <details><summary>Can Apple see my files?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>No. Everything is encrypted on your device before iCloud receives it. Apple only ever stores ciphertext.</p></details>
+        <details><summary>Do I need an account?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>No account, no email, no phone number. Install it and draw a pattern.</p></details>
+        <details><summary>Do you optimize my data?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>Photos and videos are stored in an optimized form by default. Switch to “Original” in Settings to keep full quality.</p></details>
+        <details><summary>How does sharing work?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>Share a vault with a secret phrase. You can limit opens, set an expiry and block export. Creating a share needs Pro; opening one is free.</p></details>
+        <details><summary>Do you support folders?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>Yes — folders and nested folders, with custom ordering.</p></details>
+        <details><summary>What can I store?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>Photos, videos, documents, notes — any file type.</p></details>
+        <details><summary>How many vaults can I have?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>Up to 3 on Free. Unlimited on Pro.</p></details>
+        <details><summary>How many files per vault?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>Free includes 100 photos and 10 videos in total. Pro is unlimited.</p></details>
+        <details><summary>Do you collect analytics?<svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"/></svg></summary><p>Anonymous usage and crash data, on by default. Turn it off any time with “Share errors anonymously” in Settings.</p></details>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-cta">
+      <h2>Encrypt your first file in under <em>ten seconds.</em></h2>
+      <div class="footer-cta__side">
+        <p>Free on the App Store for iPhone and iPad. No account, ever.</p>
+        <a class="btn btn--paper" href="https://vaultaire.app/go/app-store?ct=web_footer"><svg class="icon" aria-hidden="true"><use href="#i-download-simple"/></svg>Download on the App Store</a>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-brand">
+        <div class="footer-brand__name">
+          <svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><rect x="0.5" y="0.5" width="39" height="39" fill="none" stroke="#fcf2e2"/><path d="M9 11h7l4 11 4-11h7L23 31h-6z" fill="#fcf2e2"/></svg>
+          Vaultaire
+        </div>
+        <p class="footer-brand__tagline">A local-first encrypted vault for the things that are nobody else’s business.</p>
+        <div class="socials">
+          <a href="https://discord.gg/HSus4QXA4t" aria-label="Vaultaire on Discord"><svg class="icon" aria-hidden="true"><use href="#i-discord-logo"/></svg></a>
+          <a href="https://x.com/vaultaire_app" aria-label="Vaultaire on X"><svg class="icon" aria-hidden="true"><use href="#i-x-logo"/></svg></a>
+        </div>
+      </div>
+      <nav class="footer-col" aria-label="Product">
+        <h3>Product</h3>
+        <a href="https://vaultaire.app/features/">Features</a>
+        <a href="#security">Security</a>
+        <a href="https://vaultaire.app/whats-new/">What’s New</a>
+      </nav>
+      <nav class="footer-col" aria-label="Resources">
+        <h3>Resources</h3>
+        <a href="https://vaultaire.app/compare/">Compare</a>
+        <a href="https://vaultaire.app/tools/">Tools</a>
+        <a href="https://vaultaire.app/guides/">Guides</a>
+        <a href="https://vaultaire.app/scenarios/">Scenarios</a>
+        <a href="https://vaultaire.app/s/">Vault Invite</a>
+      </nav>
+      <nav class="footer-col" aria-label="Company">
+        <h3>Company</h3>
+        <a href="https://vaultaire.app/about/">About</a>
+        <a href="https://vaultaire.app/support/">Support</a>
+        <a href="https://vaultaire.app/privacy/">Privacy Policy</a>
+        <a href="https://vaultaire.app/terms/">Terms of Use</a>
+      </nav>
+    </div>
+  </div>
+  <img class="footer-art" src="assets/img/road-home.jpg" width="1672" height="941" loading="lazy"
+       alt="Engraving of a cloaked traveler carrying a small locked chest across a plain toward a fortress on a distant hill.">
+  <div class="footer-inner footer-bar">
+    <span>© 2026 <a href="https://wraxle.com/">Wraxle LLC</a></span>
+    <span>No accounts · No backdoors · No stored keys</span>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

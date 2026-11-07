@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vaultaire — Engraved Vault</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#FCF2E2}
+a{color:#1E3AA7;text-decoration:none}a:hover{color:#142A86}
+.navlinks{display:flex}
+@media (max-width:900px){.navlinks{display:none}}
+@media (max-width:1180px){.keeper{display:block!important}.keeper-text{width:100%!important;padding:56px 28px 8px!important}.keeper-img{margin-top:0!important}}
+</style>
+</helmet>
+<div style="background: #FCF2E2; color: #3D4260; font-family: Geist, system-ui, sans-serif; font-size: 16px; overflow: hidden">
+<div style="max-width: 1280px; margin: 0 auto; border-left: 1px solid #1E3AA7; border-right: 1px solid #1E3AA7; box-sizing: border-box">
+
+<!-- NAV -->
+<header style="display: flex; align-items: stretch; justify-content: space-between; border-bottom: 1px solid #1E3AA7; min-height: 72px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; padding: 0 28px; color: #142A86; border-right: 1px solid #1E3AA7">
+<svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><rect x="0.5" y="0.5" width="39" height="39" fill="#1E3AA7"></rect><path d="M9 11h7l4 11 4-11h7L23 31h-6z" fill="#FCF2E2"></path></svg>
+<span style="font-family: 'Instrument Serif', serif; font-size: 28px; line-height: 1">Vaultaire</span>
+</a>
+<nav class="navlinks" style="flex: 1; align-items: center; justify-content: center; gap: 36px; font-family: 'Instrument Serif', serif; font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase" aria-label="Main">
+<a href="#features">Features</a>
+<a href="#how">How it works</a>
+<a href="#security">Security</a>
+<a href="#plans">Plans</a>
+<a href="#faq">FAQ</a>
+</nav>
+<a href="https://vaultaire.app/go/app-store?ct=web_header_nav" style="display: flex; align-items: center; gap: 10px; padding: 0 28px; background: #1E3AA7; color: #FCF2E2; font-family: 'Instrument Serif', serif; font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase">Get the app
+<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.arrowUpRight}}"></path></svg></a>
+</header>
+
+<!-- HERO -->
+<section id="top" style="position: relative; border-bottom: 1px solid #1E3AA7; overflow: hidden">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; padding: 88px 28px 0">
+<div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3AA7">Local-first encrypted vault · iPhone &amp; iPad</div>
+<h1 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(56px, 8.2vw, 124px); line-height: 0.92; letter-spacing: -0.015em; color: #142A86; max-width: 1080px">Your Hidden album isn’t <em>actually</em> hidden. Vaultaire is.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3D4260; max-width: 560px">Your photos move into a vault only your pattern can open — encrypted on your phone. No account, no sign-up, no email.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
+<a href="https://vaultaire.app/go/app-store?ct=web_home" style="display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 26px; background: #1E3AA7; color: #FCF2E2; font-family: 'Instrument Serif', serif; font-size: 19px; letter-spacing: 0.05em; text-transform: uppercase">
+<svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.download}}"></path></svg>Download free</a>
+<a href="#how" style="display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 26px; border: 1px solid #1E3AA7; color: #1E3AA7; font-family: 'Instrument Serif', serif; font-size: 19px; letter-spacing: 0.05em; text-transform: uppercase">See how it works</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 20px; font-size: 13px; color: #5E6381">
+<span style="display: inline-flex; align-items: center; gap: 6px; color: #1E3AA7"><svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.star}}"></path></svg>4.7 on the App Store</span>
+<span>AES-256-GCM</span>
+<span>Zero accounts</span>
+</div>
+</div>
+<figure style="margin: 24px 0 0; position: relative">
+<img src="/_blob/faedc3675741aee69d12e7f807743bf4" alt="Engraving of a walled hilltop citadel with a great round vault door cut into the cliff, above a calm sea; in the sky, a 5×5 grid of stars traces an unlock pattern." style="display: block; width: 100%; height: auto">
+<figcaption style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 14px 28px; border-top: 1px solid #1E3AA7; font-family: 'Instrument Serif', serif; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3AA7"><span>Fig. I — The pattern is the key</span><span>Six dots · one turn · 256 bits</span></figcaption>
+</figure>
+</section>
+
+<!-- TRUST STRIP -->
+<section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); border-bottom: 1px solid #1E3AA7">
+<sc-for list="{{trust}}" as="t" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; gap: 16px; padding: 28px; border-right: 1px solid #1E3AA7; margin-right: -1px">
+<span style="width: 48px; height: 48px; border: 1px solid #1E3AA7; display: flex; align-items: center; justify-content: center; color: #1E3AA7; flex-shrink: 0"><svg width="26" height="26" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{t.icon}}"></path></svg></span>
+<div><div style="font-size: 16px; font-weight: 600; color: #142A86">{{t.title}}</div><div style="font-size: 13px; color: #5E6381; margin-top: 2px">{{t.sub}}</div></div>
+</div>
+</sc-for>
+</section>
+
+<!-- PROBLEM -->
+<section style="border-bottom: 1px solid #1E3AA7">
+<div class="keeper" style="display: grid">
+<div class="keeper-text" style="grid-area: 1 / 1; z-index: 1; justify-self: end; align-self: start; width: min(100%, 500px); box-sizing: border-box; padding: 72px 56px 0 24px; display: flex; flex-direction: column; gap: 18px">
+<div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3AA7">01 // The problem</div>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.98; color: #142A86">Someone takes your phone. <em>Now what?</em></h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; max-width: 400px">Hidden folders and calculator disguises hide things from a glance — not from a person holding your unlocked phone.</p>
+</div>
+<img class="keeper-img" src="/_blob/3dde6fea657f371b160b12b1854acb77" alt="Engraving of a robed figure turning a key in an iron-bound chest, with photographs, a sealed scroll, an inkwell and a potted plant on the table." style="grid-area: 1 / 1; display: block; width: 100%; height: auto; margin-top: 120px">
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); border-top: 1px solid #1E3AA7; margin-right: -1px">
+<sc-for list="{{problems}}" as="p" hint-placeholder-count="4">
+<div style="padding: 28px; border-right: 1px solid #1E3AA7; display: flex; flex-direction: column; gap: 28px; min-height: 220px; box-sizing: border-box">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+<div style="font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1.1; color: #142A86"><span style="color: #1E3AA7">{{p.n}} //</span> {{p.title}}</div>
+<span style="color: #1E3AA7; flex-shrink: 0"><svg width="28" height="28" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{p.icon}}"></path></svg></span>
+</div>
+<div style="margin-top: auto; font-size: 14px; line-height: 1.55; color: #5E6381">{{p.body}}</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- THE MATH BEHIND THE LOCK -->
+<section style="border-bottom: 1px solid #1E3AA7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; padding: 72px 48px 48px; border-bottom: 1px solid #1E3AA7">
+<div>
+<div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3AA7; margin-bottom: 18px">02 // Under the hood</div>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.98; color: #142A86">The math behind <em>the lock.</em></h2>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; max-width: 380px">Everything is encrypted on your phone before it goes anywhere. Lock it, and the active key state is gone.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 560px), 1fr))">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-right: 1px solid #1E3AA7; margin-right: -1px">
+<sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
+<div style="padding: 32px; min-height: 230px; box-sizing: border-box; border-right: {{s.br}}; border-bottom: {{s.bb}}; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+<span style="font-family: 'Instrument Serif', serif; font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase; color: #1E3AA7">{{s.n}} //</span>
+<span style="color: #1E3AA7"><svg width="28" height="28" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{s.icon}}"></path></svg></span>
+</div>
+<div>
+<div style="font-family: 'Instrument Serif', serif; font-size: 64px; line-height: 1; color: #142A86">{{s.value}}</div>
+<div style="font-family: 'Instrument Serif', serif; font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase; color: #5E6381; margin-top: 10px">{{s.label}}</div>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="position: relative; background: #1E3AA7; color: #FCF2E2; padding: 40px; min-height: 460px; overflow: hidden; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2F5"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.siren}}"></path></svg>Duress Mode · Pro</div>
+<div style="font-family: 'Instrument Serif', serif; font-size: 52px; line-height: 0.98; max-width: 300px">Forced to <em>unlock?</em></div>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #DCE2F8; max-width: 280px">Draw your duress pattern. One vault opens; the others are silently removed from the device. Your cloud backup stays recoverable with your phrase.</p>
+<a href="https://vaultaire.app/go/app-store?ct=web_home" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 20px; background: #FCF2E2; color: #1E3AA7; font-family: 'Instrument Serif', serif; font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase">Get Vaultaire Pro <svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.arrowRight}}"></path></svg></a>
+<div style="position: absolute; right: 36px; top: 120px">
+<dc-import name="Phone" theme="toile" screen="vault" hint-size="300px,620px"></dc-import>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" style="border-bottom: 1px solid #1E3AA7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; padding: 72px 48px 48px; border-bottom: 1px solid #1E3AA7">
+<div>
+<div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3AA7; margin-bottom: 18px">03 // Features</div>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.98; color: #142A86">Twelve ways to <em>keep a secret.</em></h2>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; max-width: 380px">Zero-knowledge by design. Your files never leave your device unencrypted.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); margin-right: -1px; margin-bottom: -1px">
+<sc-for list="{{features}}" as="f" hint-placeholder-count="12">
+<div style="background: {{f.bg}}; color: {{f.fg}}; border-right: 1px solid #1E3AA7; border-bottom: 1px solid #1E3AA7; padding: 28px; min-height: 280px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+<div style="font-family: 'Instrument Serif', serif; font-size: 18px; line-height: 1.2; letter-spacing: 0.05em; text-transform: uppercase">{{f.n}} //&#160;&#160;{{f.title}}</div>
+<span style="flex-shrink: 0"><svg width="30" height="30" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{f.icon}}"></path></svg></span>
+</div>
+<div style="margin-top: auto; font-size: 14px; line-height: 1.55; color: {{f.bodyFg}}">{{f.body}}</div>
+<div style="font-family: 'Instrument Serif', serif; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; color: {{f.tagFg}}">{{f.tier}}</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" style="border-bottom: 1px solid #1E3AA7">
+<div style="padding: 72px 48px 48px; border-bottom: 1px solid #1E3AA7">
+<div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3AA7; margin-bottom: 18px">04 // How it works</div>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.98; color: #142A86">From pattern to ciphertext <em>in three moves.</em></h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); margin-right: -1px">
+<div style="border-right: 1px solid #1E3AA7; padding: 36px; display: flex; flex-direction: column; gap: 18px; min-height: 460px; box-sizing: border-box">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<span style="font-family: 'Instrument Serif', serif; font-size: 96px; line-height: 0.8; color: #1E3AA7">I.</span>
+<svg width="112" height="112" viewBox="0 0 112 112" aria-hidden="true"><g fill="#C9CBE0"><circle cx="12" cy="12" r="3"></circle><circle cx="34" cy="12" r="3"></circle><circle cx="56" cy="12" r="3"></circle><circle cx="78" cy="12" r="3"></circle><circle cx="100" cy="12" r="3"></circle><circle cx="12" cy="34" r="3"></circle><circle cx="34" cy="34" r="3"></circle><circle cx="56" cy="34" r="3"></circle><circle cx="78" cy="34" r="3"></circle><circle cx="100" cy="34" r="3"></circle><circle cx="12" cy="56" r="3"></circle><circle cx="34" cy="56" r="3"></circle><circle cx="56" cy="56" r="3"></circle><circle cx="78" cy="56" r="3"></circle><circle cx="100" cy="56" r="3"></circle><circle cx="12" cy="78" r="3"></circle><circle cx="34" cy="78" r="3"></circle><circle cx="56" cy="78" r="3"></circle><circle cx="78" cy="78" r="3"></circle><circle cx="100" cy="78" r="3"></circle><circle cx="12" cy="100" r="3"></circle><circle cx="34" cy="100" r="3"></circle><circle cx="56" cy="100" r="3"></circle><circle cx="78" cy="100" r="3"></circle><circle cx="100" cy="100" r="3"></circle></g><polyline points="12,12 34,12 56,12 78,12 78,34 78,56 56,78 34,100" fill="none" stroke="#1E3AA7" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"></polyline><g fill="#1E3AA7"><rect x="8" y="8" width="8" height="8"></rect><rect x="30" y="96" width="8" height="8"></rect></g></svg>
+</div>
+<div style="margin-top: auto; font-size: 20px; font-weight: 600; color: #142A86">Draw your pattern</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.6">At least six dots and one change of direction on a 5×5 grid. That’s your key — nothing to type, nothing to remember on paper.</p>
+<div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #1E3AA7; border-top: 1px dashed rgba(30,58,167,0.35); padding-top: 14px">PBKDF2 · DEVICE-WIDE KEYCHAIN SALT</div>
+</div>
+<div style="border-right: 1px solid #1E3AA7; padding: 36px; display: flex; flex-direction: column; gap: 18px; min-height: 460px; box-sizing: border-box">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<span style="font-family: 'Instrument Serif', serif; font-size: 96px; line-height: 0.8; color: #1E3AA7">II.</span>
+<span style="width: 112px; height: 112px; border: 1px solid #1E3AA7; display: flex; align-items: center; justify-content: center; color: #1E3AA7"><svg width="56" height="56" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.folderPlus}}"></path></svg></span>
+</div>
+<div style="margin-top: auto; font-size: 20px; font-weight: 600; color: #142A86">Load the vault</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.6">Import photos, videos, documents and notes — or shoot straight into it with the secure camera.</p>
+<div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #1E3AA7; border-top: 1px dashed rgba(30,58,167,0.35); padding-top: 14px">AES-256-GCM · ENCRYPTED ON ENTRY</div>
+</div>
+<div style="border-right: 1px solid #1E3AA7; padding: 36px; display: flex; flex-direction: column; gap: 18px; min-height: 460px; box-sizing: border-box; background: #1E3AA7; color: #DCE2F8">
+<div style="display: flex; justify-content: space-between; align-items: flex-start">
+<span style="font-family: 'Instrument Serif', serif; font-size: 96px; line-height: 0.8; color: #FCF2E2">III.</span>
+<span style="width: 112px; height: 112px; border: 1px solid #FCF2E2; display: flex; align-items: center; justify-content: center; color: #FCF2E2"><svg width="56" height="56" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.lockKey}}"></path></svg></span>
+</div>
+<div style="margin-top: auto; font-size: 20px; font-weight: 600; color: #FCF2E2">Lock &amp; vanish</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.6">Locking discards the active key state. What’s left on the device is ciphertext — and an unlock screen that lists nothing.</p>
+<div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #FCF2E2; border-top: 1px dashed rgba(252,242,226,0.4); padding-top: 14px">KEY STATE DISCARDED ON LOCK</div>
+</div>
+</div>
+</section>
+
+<!-- SECURITY -->
+<section id="security" style="background: #1E3AA7; color: #FCF2E2; border-bottom: 1px solid #1E3AA7; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr))">
+<div style="padding: 72px 48px; display: flex; flex-direction: column; gap: 22px">
+<div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2F5">05 // Security model</div>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.98">We don’t trust servers. <em>We trust math.</em></h2>
+<div style="display: flex; flex-direction: column; margin-top: 12px; border-top: 1px solid rgba(252,242,226,0.45)">
+<sc-for list="{{specs}}" as="r" hint-placeholder-count="4">
+<div style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px dashed rgba(252,242,226,0.3); font-size: 15px">
+<span style="font-family: 'Instrument Serif', serif; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2F5; padding-top: 2px">{{r.k}}</span><span>{{r.v}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="padding: 72px 48px; display: flex; align-items: center; border-left: 1px solid rgba(252,242,226,0.3)">
+<div style="width: 100%; border: 1px solid rgba(252,242,226,0.45); background: #142A86">
+<div style="display: flex; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid rgba(252,242,226,0.3); font-family: 'Geist Mono', monospace; font-size: 12px; color: #C9D2F5"><span>vault.config</span><span>read-only</span></div>
+<pre style="margin: 0; padding: 24px; font-family: 'Geist Mono', monospace; font-size: 14px; line-height: 1.85; color: #FCF2E2; white-space: pre-wrap">{
+  cipher:        "AES-256-GCM",
+  kdf:           "PBKDF2-HMAC-SHA512",
+  iterations:    600000,
+  icloud_backup: true,
+  account:       null
+}
+<span style="color: #AFBDF0">// Servers never receive your keys.
+// Only your pattern or phrase decrypts.</span></pre>
+</div>
+</div>
+</section>
+
+<!-- PLANS -->
+<section id="plans" style="border-bottom: 1px solid #1E3AA7">
+<div style="padding: 72px 48px 48px; border-bottom: 1px solid #1E3AA7">
+<div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3AA7; margin-bottom: 18px">06 // Plans</div>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.98; color: #142A86">Start free. <em>Go Pro</em> when you need more.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr))">
+<div style="padding: 44px 48px; display: flex; flex-direction: column; gap: 20px; border-right: 1px solid #1E3AA7; margin-right: -1px">
+<div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3AA7">Free</div>
+<div style="font-family: 'Instrument Serif', serif; font-size: 80px; line-height: 0.9; color: #142A86">$0</div>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #1E3AA7">
+<sc-for list="{{freeList}}" as="x" hint-placeholder-count="6">
+<div style="padding: 12px 0; border-bottom: 1px dashed rgba(30,58,167,0.35); font-size: 15px; display: flex; gap: 12px; align-items: center"><svg width="16" height="16" viewBox="0 0 256 256" fill="#1E3AA7" aria-hidden="true"><path d="{{ic.plus}}"></path></svg>{{x}}</div>
+</sc-for>
+</div>
+<a href="https://vaultaire.app/go/app-store?ct=web_home" style="margin-top: 8px; height: 52px; border: 1px solid #1E3AA7; color: #1E3AA7; display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-size: 19px; letter-spacing: 0.05em; text-transform: uppercase">Download free</a>
+</div>
+<div style="padding: 44px 48px; display: flex; flex-direction: column; gap: 20px; background: #1E3AA7; color: #FCF2E2">
+<div style="display: flex; justify-content: space-between; font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2F5"><span>Vaultaire Pro</span><span>Unlimited</span></div>
+<div style="font-family: 'Instrument Serif', serif; font-size: 80px; line-height: 0.9">[PRO PRICE]</div>
+<div style="display: flex; flex-direction: column; border-top: 1px solid rgba(252,242,226,0.5)">
+<sc-for list="{{proList}}" as="x" hint-placeholder-count="6">
+<div style="padding: 12px 0; border-bottom: 1px dashed rgba(252,242,226,0.3); font-size: 15px; display: flex; gap: 12px; align-items: center"><svg width="16" height="16" viewBox="0 0 256 256" fill="#FCF2E2" aria-hidden="true"><path d="{{ic.plus}}"></path></svg>{{x}}</div>
+</sc-for>
+</div>
+<a href="https://vaultaire.app/go/app-store?ct=web_home" style="margin-top: 8px; height: 52px; background: #FCF2E2; color: #1E3AA7; display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-size: 19px; letter-spacing: 0.05em; text-transform: uppercase">Get Vaultaire Pro</a>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); border-bottom: 1px solid #1E3AA7">
+<div style="padding: 72px 48px; display: flex; flex-direction: column; gap: 20px; border-right: 1px solid #1E3AA7; margin-right: -1px">
+<div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #1E3AA7">07 // Questions</div>
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 4.6vw, 68px); line-height: 0.98; color: #142A86">Asked, <em>answered.</em></h2>
+<div style="margin-top: 28px; display: flex; flex-direction: column; border-top: 1px solid #1E3AA7">
+<div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #5E6381; padding: 16px 0 8px">How Vaultaire compares</div>
+<sc-for list="{{compare}}" as="c" hint-placeholder-count="4">
+<a href="https://vaultaire.app/compare/" style="display: flex; justify-content: space-between; align-items: center; min-height: 48px; border-bottom: 1px dashed rgba(30,58,167,0.35); font-size: 15px">{{c}}<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.arrowUpRight}}"></path></svg></a>
+</sc-for>
+</div>
+</div>
+<div style="padding: 48px 48px 56px">
+<sc-for list="{{faqs}}" as="q" hint-placeholder-count="11">
+<div style="border-bottom: 1px solid {{q.line}}">
+<button type="button" onClick="{{q.toggle}}" aria-expanded="{{q.open}}" style="width: 100%; min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; background: none; border: 0; color: #142A86; font-family: 'Instrument Serif', serif; font-size: 26px; line-height: 1.1; text-align: left; cursor: pointer">{{q.q}}<svg width="20" height="20" viewBox="0 0 256 256" fill="#1E3AA7" aria-hidden="true" style="flex-shrink: 0"><path d="{{q.iconD}}"></path></svg></button>
+<sc-if value="{{q.open}}" hint-placeholder-val="{{false}}">
+<div style="padding: 0 0 22px; font-size: 15px; line-height: 1.65; max-width: 600px">{{q.a}}</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+
+</div>
+
+<!-- CTA + FOOTER -->
+<footer style="background: #1E3AA7; color: #FCF2E2">
+<div style="max-width: 1280px; margin: 0 auto; padding: 64px 48px 48px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 32px; align-items: end; border-bottom: 1px solid rgba(252,242,226,0.35)">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(40px, 4.2vw, 60px); line-height: 0.98">Encrypt your first file in under <em>ten seconds.</em></h2>
+<div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start">
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #DCE2F8">Free on the App Store for iPhone and iPad. No account, ever.</p>
+<a href="https://vaultaire.app/go/app-store?ct=web_footer" style="display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 26px; background: #FCF2E2; color: #1E3AA7; font-family: 'Instrument Serif', serif; font-size: 19px; letter-spacing: 0.05em; text-transform: uppercase"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.download}}"></path></svg>Download on the App Store</a>
+</div>
+</div>
+<div style="max-width: 1280px; margin: 0 auto; padding: 40px 48px 32px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 28px; font-size: 15px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px"><svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><rect x="0.5" y="0.5" width="39" height="39" fill="none" stroke="#FCF2E2"></rect><path d="M9 11h7l4 11 4-11h7L23 31h-6z" fill="#FCF2E2"></path></svg><span style="font-family: 'Instrument Serif', serif; font-size: 30px; line-height: 1">Vaultaire</span></div>
+<p style="margin: 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 19px; line-height: 1.35; color: #DCE2F8">A local-first encrypted vault for the things that are nobody else’s business.</p>
+<div style="display: flex; gap: 10px; margin-top: 6px">
+<a href="https://discord.gg/HSus4QXA4t" aria-label="Vaultaire on Discord" style="width: 44px; height: 44px; border: 1px solid rgba(252,242,226,0.5); display: flex; align-items: center; justify-content: center; color: #FCF2E2"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.discord}}"></path></svg></a>
+<a href="https://x.com/vaultaire_app" aria-label="Vaultaire on X" style="width: 44px; height: 44px; border: 1px solid rgba(252,242,226,0.5); display: flex; align-items: center; justify-content: center; color: #FCF2E2"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{ic.x}}"></path></svg></a>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px"><div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; padding-bottom: 12px; margin-bottom: 4px; border-bottom: 1px solid rgba(252,242,226,0.5); width: 40px; white-space: nowrap">Product</div><a href="https://vaultaire.app/features/" style="color: #FCF2E2">Features</a><a href="#security" style="color: #FCF2E2">Security</a><a href="https://vaultaire.app/whats-new/" style="color: #FCF2E2">What’s New</a></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; padding-bottom: 12px; margin-bottom: 4px; border-bottom: 1px solid rgba(252,242,226,0.5); width: 40px; white-space: nowrap">Resources</div><a href="https://vaultaire.app/compare/" style="color: #FCF2E2">Compare</a><a href="https://vaultaire.app/tools/" style="color: #FCF2E2">Tools</a><a href="https://vaultaire.app/guides/" style="color: #FCF2E2">Guides</a><a href="https://vaultaire.app/scenarios/" style="color: #FCF2E2">Scenarios</a><a href="https://vaultaire.app/s/" style="color: #FCF2E2">Vault Invite</a></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><div style="font-family: 'Instrument Serif', serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; padding-bottom: 12px; margin-bottom: 4px; border-bottom: 1px solid rgba(252,242,226,0.5); width: 40px; white-space: nowrap">Company</div><a href="https://vaultaire.app/about/" style="color: #FCF2E2">About</a><a href="https://vaultaire.app/support/" style="color: #FCF2E2">Support</a><a href="https://vaultaire.app/privacy/" style="color: #FCF2E2">Privacy Policy</a><a href="https://vaultaire.app/terms/" style="color: #FCF2E2">Terms of Use</a></div>
+</div>
+<img src="/_blob/8b76e6615cdac82a4546ce1246d89448" alt="Engraving of a cloaked traveler carrying a small locked chest across a plain toward a fortress on a distant hill." style="display: block; width: 100%; height: 300px; object-fit: cover; object-position: 50% 42%">
+<div style="max-width: 1280px; margin: 0 auto; padding: 18px 48px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #DCE2F8">
+<span>© 2026 <a href="https://wraxle.com/" style="color: #FCF2E2">Wraxle LLC</a></span>
+<span style="letter-spacing: 0.12em; text-transform: uppercase; font-size: 12px">No accounts · No backdoors · No stored keys</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":8600}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { open: 0 }; }
+  renderVals() {
+    var self = this;
+    // Phosphor Icons (bold weight), MIT licensed — phosphoricons.com
+    var ic = {
+      arrowRight: 'M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z',
+      arrowUpRight: 'M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z',
+      download: 'M228,144v64a12,12,0,0,1-12,12H40a12,12,0,0,1-12-12V144a12,12,0,0,1,24,0v52H204V144a12,12,0,0,1,24,0Zm-108.49,8.49a12,12,0,0,0,17,0l40-40a12,12,0,0,0-17-17L140,115V32a12,12,0,0,0-24,0v83L96.49,95.51a12,12,0,0,0-17,17Z',
+      plus: 'M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z',
+      minus: 'M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128Z',
+      dots: 'M76,60A16,16,0,1,1,60,44,16,16,0,0,1,76,60Zm52-16a16,16,0,1,0,16,16A16,16,0,0,0,128,44Zm68,32a16,16,0,1,0-16-16A16,16,0,0,0,196,76ZM60,112a16,16,0,1,0,16,16A16,16,0,0,0,60,112Zm68,0a16,16,0,1,0,16,16A16,16,0,0,0,128,112Zm68,0a16,16,0,1,0,16,16A16,16,0,0,0,196,112ZM60,180a16,16,0,1,0,16,16A16,16,0,0,0,60,180Zm68,0a16,16,0,1,0,16,16A16,16,0,0,0,128,180Zm68,0a16,16,0,1,0,16,16A16,16,0,0,0,196,180Z',
+      folderPlus: 'M216,68H133.39l-26-29.29a20,20,0,0,0-15-6.71H40A20,20,0,0,0,20,52V200.62A19.41,19.41,0,0,0,39.38,220H216.89A19.13,19.13,0,0,0,236,200.89V88A20,20,0,0,0,216,68ZM90.61,56l10.67,12H44V56ZM212,196H44V92H212Zm-72-76v12h12a12,12,0,0,1,0,24H140v12a12,12,0,0,1-24,0V156H104a12,12,0,0,1,0-24h12V120a12,12,0,0,1,24,0Z',
+      vault: 'M216,36H40A20,20,0,0,0,20,56V192a20,20,0,0,0,20,20H52v12a12,12,0,0,0,24,0V212H180v12a12,12,0,0,0,24,0V212h12a20,20,0,0,0,20-20V56A20,20,0,0,0,216,36ZM44,188V60H212v52H190.32a44,44,0,1,0,0,24H212v52Zm124-64a20,20,0,1,1-20-20A20,20,0,0,1,168,124Z',
+      lockKey: 'M208,76H180V56A52,52,0,0,0,76,56V76H48A20,20,0,0,0,28,96V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V96A20,20,0,0,0,208,76ZM100,56a28,28,0,0,1,56,0V76H100ZM204,204H52V100H204Zm-76-92a32,32,0,0,0-12,61.66V180a12,12,0,0,0,24,0v-6.34A32,32,0,0,0,128,112Zm0,24a8,8,0,1,1-8,8A8,8,0,0,1,128,136Z',
+      key: 'M196,76a16,16,0,1,1-16-16A16,16,0,0,1,196,76Zm48,22.74A84.3,84.3,0,0,1,160.11,180H160a83.52,83.52,0,0,1-23.65-3.38l-7.86,7.87A12,12,0,0,1,120,188H108v12a12,12,0,0,1-12,12H84v12a12,12,0,0,1-12,12H40a20,20,0,0,1-20-20V187.31a19.86,19.86,0,0,1,5.86-14.14l53.52-53.52A84,84,0,1,1,244,98.74ZM202.43,53.57A59.48,59.48,0,0,0,158,36c-32,1-58,27.89-58,59.89a59.69,59.69,0,0,0,4.2,22.19,12,12,0,0,1-2.55,13.21L44,189v23H60V200a12,12,0,0,1,12-12H84V176a12,12,0,0,1,12-12h19l9.65-9.65a12,12,0,0,1,13.22-2.55A59.58,59.58,0,0,0,160,156h.08c32,0,58.87-26.07,59.89-58A59.55,59.55,0,0,0,202.43,53.57Z',
+      mask: 'M219.29,31.5a20,20,0,0,0-18.52-2.14C187,34.72,159.17,43.7,128,43.7s-59-9-72.77-14.34A20,20,0,0,0,28,48v55.77c0,36.64,9.9,71.25,27.88,97.45C74.81,228.81,100.42,244,128,244s53.19-15.19,72.12-42.76C218.1,175,228,140.43,228,103.79V48A20,20,0,0,0,219.29,31.5ZM204,103.79c0,31.84-8.41,61.63-23.67,83.87C166,208.51,147.43,220,128,220s-38-11.49-52.33-32.34C60.41,165.42,52,135.63,52,103.79v-50c16.59,5.95,44.67,13.94,76,13.94s59.41-8,76-13.94Zm-38.67,62.88a12,12,0,0,1-1.79,16.87,56.92,56.92,0,0,1-71.08,0,12,12,0,0,1,15.08-18.67,32.92,32.92,0,0,0,40.92,0A12,12,0,0,1,165.33,166.67Zm-27.44-35.51a12,12,0,0,1,3.61-16.58,41.66,41.66,0,0,1,39.23-3.06,12,12,0,1,1-9.46,22.06A19.53,19.53,0,0,0,164,132a19.14,19.14,0,0,0-9.52,2.77,12,12,0,0,1-16.59-3.61ZM92,132a19.44,19.44,0,0,0-7.27,1.59,12,12,0,0,1-9.46-22.06,41.61,41.61,0,0,1,39.23,3,12,12,0,1,1-13,20.19A19.21,19.21,0,0,0,92,132Z',
+      eyeSlash: 'M56.88,31.93A12,12,0,1,0,39.12,48.07l16,17.65C20.67,88.66,5.72,121.58,5,123.13a12.08,12.08,0,0,0,0,9.75c.37.82,9.13,20.26,28.49,39.61C59.37,198.34,92,212,128,212a131.34,131.34,0,0,0,51-10l20.09,22.1a12,12,0,0,0,17.76-16.14ZM128,188c-29.59,0-55.47-10.73-76.91-31.88A130.69,130.69,0,0,1,29.52,128c5.27-9.31,18.79-29.9,42-44.29l90.09,99.11A109.33,109.33,0,0,1,128,188Zm123-55.12c-.36.81-9,20-28,39.16a12,12,0,1,1-17-16.9A130.48,130.48,0,0,0,226.48,128a130.36,130.36,0,0,0-21.57-28.12C183.46,78.73,157.59,68,128,68c-3.35,0-6.7.14-10,.42a12,12,0,1,1-2-23.91c3.93-.34,8-.51,12-.51,36,0,68.63,13.67,94.49,39.52,19.35,19.35,28.11,38.8,28.48,39.61A12.08,12.08,0,0,1,251,132.88Z',
+      siren: 'M116,20V12a12,12,0,0,1,24,0v8a12,12,0,0,1-24,0Zm84,36a12,12,0,0,0,8.49-3.51l8-8a12,12,0,1,0-17-17l-8,8A12,12,0,0,0,200,56ZM47.51,52.49a12,12,0,0,0,17-17l-8-8a12,12,0,0,0-17,17ZM236,176v24a20,20,0,0,1-20,20H40a20,20,0,0,1-20-20V176a20,20,0,0,1,16-19.6V140a92,92,0,0,1,92-92h.71C179,48.38,220,90.1,220,141v15.4A20,20,0,0,1,236,176ZM60,140v16H196V141c0-37.77-30.27-68.72-67.48-69H128a68,68,0,0,0-68,68Zm152,40H44v16H212Zm-75.6-66.72a28,28,0,0,1,18.32,18.32,12,12,0,0,0,22.9-7.2,52,52,0,0,0-34-34,12,12,0,0,0-7.2,22.9Z',
+      cloudCheck: 'M160,36A92.09,92.09,0,0,0,79,84.36,68,68,0,1,0,72,220h88a92,92,0,0,0,0-184Zm0,160H72a44,44,0,0,1-1.82-88A91.86,91.86,0,0,0,68,128a12,12,0,0,0,24,0,68,68,0,1,1,68,68Zm40.49-92.49a12,12,0,0,1,0,17l-48,48a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L144,143l39.51-39.52A12,12,0,0,1,200.49,103.51Z',
+      share: 'M176,156a43.78,43.78,0,0,0-29.09,11L106.1,140.8a44.07,44.07,0,0,0,0-25.6L146.91,89a43.83,43.83,0,1,0-13-20.17L93.09,95a44,44,0,1,0,0,65.94L133.9,187.2A44,44,0,1,0,176,156Zm0-120a20,20,0,1,1-20,20A20,20,0,0,1,176,36ZM64,148a20,20,0,1,1,20-20A20,20,0,0,1,64,148Zm112,72a20,20,0,1,1,20-20A20,20,0,0,1,176,220Z',
+      devices: 'M224,72H212V64a28,28,0,0,0-28-28H40A28,28,0,0,0,12,64v88a28,28,0,0,0,28,28h96v12a28,28,0,0,0,28,28h60a28,28,0,0,0,28-28V100A28,28,0,0,0,224,72ZM40,156a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4H184a4,4,0,0,1,4,4v8H164a28,28,0,0,0-28,28v56Zm188,36a4,4,0,0,1-4,4H164a4,4,0,0,1-4-4V100a4,4,0,0,1,4-4h60a4,4,0,0,1,4,4ZM124,208a12,12,0,0,1-12,12H88a12,12,0,0,1,0-24h24A12,12,0,0,1,124,208Zm88-84a12,12,0,0,1-12,12H188a12,12,0,0,1,0-24h12A12,12,0,0,1,212,124Z',
+      camera: 'M208,52H182.42L170,33.34A12,12,0,0,0,160,28H96a12,12,0,0,0-10,5.34L73.57,52H48A28,28,0,0,0,20,80V192a28,28,0,0,0,28,28H208a28,28,0,0,0,28-28V80A28,28,0,0,0,208,52Zm4,140a4,4,0,0,1-4,4H48a4,4,0,0,1-4-4V80a4,4,0,0,1,4-4H80a12,12,0,0,0,10-5.34L102.42,52h51.15L166,70.66A12,12,0,0,0,176,76h32a4,4,0,0,1,4,4ZM128,84a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,84Zm0,72a24,24,0,1,1,24-24A24,24,0,0,1,128,156Z',
+      squares: 'M100,36H56A20,20,0,0,0,36,56v44a20,20,0,0,0,20,20h44a20,20,0,0,0,20-20V56A20,20,0,0,0,100,36ZM96,96H60V60H96ZM200,36H156a20,20,0,0,0-20,20v44a20,20,0,0,0,20,20h44a20,20,0,0,0,20-20V56A20,20,0,0,0,200,36Zm-4,60H160V60h36Zm-96,40H56a20,20,0,0,0-20,20v44a20,20,0,0,0,20,20h44a20,20,0,0,0,20-20V156A20,20,0,0,0,100,136Zm-4,60H60V160H96Zm104-60H156a20,20,0,0,0-20,20v44a20,20,0,0,0,20,20h44a20,20,0,0,0,20-20V156A20,20,0,0,0,200,136Zm-4,60H160V160h36Z',
+      shield: 'M208,36H48A20,20,0,0,0,28,56v56c0,54.29,26.32,87.22,48.4,105.29,23.71,19.39,47.44,26,48.44,26.29a12.1,12.1,0,0,0,6.32,0c1-.28,24.73-6.9,48.44-26.29,22.08-18.07,48.4-51,48.4-105.29V56A20,20,0,0,0,208,36Zm-4,76c0,35.71-13.09,64.69-38.91,86.15A126.28,126.28,0,0,1,128,219.38a126.14,126.14,0,0,1-37.09-21.23C65.09,176.69,52,147.71,52,112V60H204ZM79.51,144.49a12,12,0,1,1,17-17L112,143l47.51-47.52a12,12,0,0,1,17,17l-56,56a12,12,0,0,1-17,0Z',
+      hand: 'M228,156v36c0,13.85-1.63,26.52-4.58,35.68a12,12,0,1,1-22.84-7.36c2.14-6.65,3.42-17.24,3.42-28.32V156a8,8,0,0,0-16,0v4a12,12,0,0,1-24,0V140a8,8,0,0,0-16,0v12a12,12,0,0,1-24,0V84a8,8,0,0,0-16,0V192a12,12,0,0,1-22.18,6.34l-18.68-30-.21-.34A8,8,0,0,0,53,175.92L78.27,217.8a12,12,0,0,1-20.56,12.39l-25.31-42-.12-.2A32,32,0,0,1,84,150.83V84a32,32,0,0,1,64,0v25a32,32,0,0,1,36.78,17A32,32,0,0,1,228,156ZM56,96A12,12,0,0,0,68,84a48,48,0,0,1,96,0,12,12,0,0,0,24,0A72,72,0,0,0,44,84,12,12,0,0,0,56,96Z',
+      calculator: 'M200,20H56A20,20,0,0,0,36,40V216a20,20,0,0,0,20,20H200a20,20,0,0,0,20-20V40A20,20,0,0,0,200,20Zm-4,192H60V44H196ZM80,76A12,12,0,0,1,92,64h72a12,12,0,0,1,0,24H92A12,12,0,0,1,80,76Zm40,52a16,16,0,1,1-16-16A16,16,0,0,1,120,128Zm48,0a16,16,0,1,1-16-16A16,16,0,0,1,168,128Zm-48,48a16,16,0,1,1-16-16A16,16,0,0,1,120,176Zm48,0a16,16,0,1,1-16-16A16,16,0,0,1,168,176Z',
+      list: 'M84,64A12,12,0,0,1,96,52H216a12,12,0,0,1,0,24H96A12,12,0,0,1,84,64Zm132,52H96a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Zm0,64H96a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24ZM56,52H40a12,12,0,0,0,0,24H56a12,12,0,0,0,0-24Zm0,64H40a12,12,0,0,0,0,24H56a12,12,0,0,0,0-24Zm0,64H40a12,12,0,0,0,0,24H56a12,12,0,0,0,0-24Z',
+      drives: 'M208,36H48A20,20,0,0,0,28,56V200a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V56A20,20,0,0,0,208,36Zm-4,24v56H52V60ZM52,196V140H204v56ZM160,88a16,16,0,1,1,16,16A16,16,0,0,1,160,88Zm32,80a16,16,0,1,1-16-16A16,16,0,0,1,192,168Z',
+      star: 'M243,96a20.33,20.33,0,0,0-17.74-14l-56.59-4.57L146.83,24.62a20.36,20.36,0,0,0-37.66,0L87.35,77.44,30.76,82A20.45,20.45,0,0,0,19.1,117.88l43.18,37.24-13.2,55.7A20.37,20.37,0,0,0,79.57,233L128,203.19,176.43,233a20.39,20.39,0,0,0,30.49-22.15l-13.2-55.7,43.18-37.24A20.43,20.43,0,0,0,243,96ZM172.53,141.7a12,12,0,0,0-3.84,11.86L181.58,208l-47.29-29.08a12,12,0,0,0-12.58,0L74.42,208l12.89-54.4a12,12,0,0,0-3.84-11.86L41.2,105.24l55.4-4.47a12,12,0,0,0,10.13-7.38L128,41.89l21.27,51.5a12,12,0,0,0,10.13,7.38l55.4,4.47Z',
+      user: 'M92.38,38.05A12,12,0,0,1,101,23.42a108,108,0,0,1,54,0,12,12,0,1,1-6,23.23,84,84,0,0,0-42,0A12,12,0,0,1,92.38,38.05ZM32.29,113.87a12.2,12.2,0,0,0,3.2.43,12,12,0,0,0,11.56-8.8,84,84,0,0,1,21-36.35A12,12,0,1,0,50.94,52.34a108.1,108.1,0,0,0-27,46.76A12,12,0,0,0,32.29,113.87ZM149,209.35a84,84,0,0,1-42,0,12,12,0,1,0-6,23.23,108,108,0,0,0,54,0,12,12,0,1,0-6-23.23Zm59.95-103.83a12,12,0,0,0,23.12-6.42,108,108,0,0,0-27-46.78A12,12,0,1,0,188,69.15,84,84,0,0,1,208.94,105.52Zm23.15,51.39a107.86,107.86,0,0,1-31.86,51.38,12,12,0,0,1-18.72-3.48,60,60,0,0,0-107,0,12,12,0,0,1-8.5,6.36,12.48,12.48,0,0,1-2.19.2,12,12,0,0,1-8-3.08A107.85,107.85,0,0,1,23.91,156.9,12,12,0,0,1,47,150.49,83.58,83.58,0,0,0,62,180a83.46,83.46,0,0,1,29-23.47,52,52,0,1,1,74,0A83.59,83.59,0,0,1,194,180a83.73,83.73,0,0,0,15-29.49,12,12,0,0,1,23.13,6.42ZM128,148a28,28,0,1,0-28-28A28,28,0,0,0,128,148Z',
+      envelope: 'M230.66,86l-96-64a12,12,0,0,0-13.32,0l-96,64A12,12,0,0,0,20,96V200a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V96A12,12,0,0,0,230.66,86ZM128,46.42l74.86,49.91L141.61,140H114.39L53.14,96.33ZM44,196V119.29l59.58,42.48a12,12,0,0,0,7,2.23h34.9a12,12,0,0,0,7-2.23L212,119.29V196Z',
+      x: 'M218.12,209.56l-61-95.8,59.72-65.69a12,12,0,0,0-17.76-16.14L143.81,92.77,106.12,33.56A12,12,0,0,0,96,28H48A12,12,0,0,0,37.88,46.44l61,95.8L39.12,207.93a12,12,0,1,0,17.76,16.14l55.31-60.84,37.69,59.21A12,12,0,0,0,160,228h48a12,12,0,0,0,10.12-18.44ZM166.59,204,69.86,52H89.41l96.73,152Z',
+      discord: 'M108,136a16,16,0,1,1-16-16A16,16,0,0,1,108,136Zm56-16a16,16,0,1,0,16,16A16,16,0,0,0,164,120Zm76.07,76.56-67,29.71A20.15,20.15,0,0,1,146,214.9l-8.54-23.13c-3.13.14-6.27.24-9.45.24s-6.32-.1-9.45-.24L110,214.9a20.19,20.19,0,0,1-27.08,11.37l-67-29.71A19.93,19.93,0,0,1,4.62,173.41L34.15,57A20,20,0,0,1,50.37,42.19l36.06-5.93A20.26,20.26,0,0,1,109.22,51.1l4.41,17.41c4.74-.33,9.52-.51,14.37-.51s9.63.18,14.37.51l4.41-17.41a20.25,20.25,0,0,1,22.79-14.84l36.06,5.93A20,20,0,0,1,221.85,57l29.53,116.38A19.93,19.93,0,0,1,240.07,196.56ZM227.28,176,199.23,65.46l-30.07-4.94-2.84,11.17c2.9.58,5.78,1.2,8.61,1.92a12,12,0,1,1-5.86,23.27A168.43,168.43,0,0,0,128,92a168.43,168.43,0,0,0-41.07,4.88,12,12,0,0,1-5.86-23.27c2.83-.72,5.71-1.34,8.61-1.92L86.85,60.52,56.77,65.46,28.72,176l60.22,26.7,5-13.57c-4.37-.76-8.67-1.65-12.88-2.71a12,12,0,0,1,5.86-23.28A168.43,168.43,0,0,0,128,168a168.43,168.43,0,0,0,41.07-4.88,12,12,0,0,1,5.86,23.28c-4.21,1.06-8.51,1.95-12.88,2.71l5,13.57Z'
+    };
+    var trust = [
+      { icon: ic.user, title: 'No accounts', sub: 'Nothing to sign up for' },
+      { icon: ic.envelope, title: 'No email required', sub: 'Or phone number' },
+      { icon: ic.shield, title: 'No backdoors', sub: 'We don’t store keys' },
+      { icon: ic.cloudCheck, title: 'Encrypted before iCloud', sub: 'Servers see ciphertext only' }
+    ];
+    var problems = [
+      { n: '01', icon: ic.eyeSlash, title: 'A Hidden album is a label, not a lock', body: 'Anyone with your unlocked phone can open it in a couple of taps.' },
+      { n: '02', icon: ic.calculator, title: 'Calculator disguises are a costume', body: 'Once someone knows the trick, everything behind it is in plain view.' },
+      { n: '03', icon: ic.list, title: 'Vault lists give you away', body: 'Vaultaire never opens to a list of named vaults — only a pattern grid.' },
+      { n: '04', icon: ic.drives, title: 'Servers are someone else’s computer', body: 'Everything is encrypted on-device first. No server ever receives your keys.' }
+    ];
+    var line = '1px solid #1E3AA7';
+    var stats = [
+      { n: '01', icon: ic.lockKey, value: 'AES-256', label: 'GCM, for every file', br: line, bb: line },
+      { n: '02', icon: ic.key, value: '600k', label: 'PBKDF2 iterations', br: 'none', bb: line },
+      { n: '03', icon: ic.list, value: '9 words', label: 'Recovery phrase', br: line, bb: 'none' },
+      { n: '04', icon: ic.user, value: 'Zero', label: 'Accounts or emails', br: 'none', bb: 'none' }
+    ];
+    var feats = [
+      ['Pattern Encryption', 'Core', ic.dots, 'Draw on a 5×5 grid. PBKDF2 turns it into a 256-bit key that unwraps your vault’s random master key.'],
+      ['Secret Phrase', 'Core', ic.key, 'A nine-word recovery phrase — or your own — opens a separate encrypted envelope if you forget your pattern.'],
+      ['Plausible Deniability', 'Core', ic.mask, 'Different patterns open different vaults. No picker, no list — nothing on screen says another vault exists.'],
+      ['Hidden Vaults', 'Core', ic.eyeSlash, 'The unlock screen never lists vaults, and file names on disk never reveal which vault they belong to.'],
+      ['Duress Mode', 'Pro', ic.siren, 'A special pattern opens one vault and silently removes the others from the device. Cloud backups stay recoverable.'],
+      ['iCloud Backup', 'Free + Pro', ic.cloudCheck, 'On by default. A separate pattern-derived key encrypts padded records before CloudKit ever sees them.'],
+      ['Secure Sharing', 'Pro to create · free to open', ic.share, 'Share a vault with a secret phrase. Limit opens, set an expiry, block export.'],
+      ['Device Sync', 'Pro', ic.devices, 'The same vault on iPhone and iPad — encrypted on-device before iCloud receives it.'],
+      ['Secure Camera', 'Core', ic.camera, 'Shoot photos and video straight into the vault. Nothing touches your camera roll.'],
+      ['App Icons', 'Pro', ic.squares, 'Swap the icon for Calculator, Printer or five other utilities. Add a custom-named tile on iOS 18.'],
+      ['Architecture', 'Core', ic.shield, 'AES-256-GCM for files, metadata, thumbnails, indexes and key wrappers. Separate vault, backup and recovery keys.'],
+      ['Ease of Use', 'Core', ic.hand, 'No setup wizard. AES-256 encryption that feels like unlocking your phone.']
+    ];
+    var features = feats.map(function (f, i) {
+      var hot = i === 0;
+      return { n: (i < 9 ? '0' : '') + (i + 1), title: f[0], tier: f[1], icon: f[2], body: f[3], bg: hot ? '#1E3AA7' : 'transparent', fg: hot ? '#FCF2E2' : '#1E3AA7', bodyFg: hot ? '#DCE2F8' : '#3D4260', tagFg: hot ? '#C9D2F5' : (f[1].indexOf('Pro') === 0 ? '#1E3AA7' : '#5E6381') };
+    });
+    var specs = [
+      { k: 'Files', v: 'AES-256-GCM — content, thumbnails, indexes' },
+      { k: 'Keys', v: 'PBKDF2-HMAC-SHA512 · 600,000 iterations' },
+      { k: 'Metadata', v: 'Authenticated AES-256-GCM' },
+      { k: 'Cloud', v: 'Encrypted on device before iCloud receives it' }
+    ];
+    var freeList = ['Up to 3 vaults', '100 photos + 10 videos total', 'Pattern encryption & recovery phrase', 'Encrypted iCloud backup', 'Secure camera', 'Open shared vaults'];
+    var proList = ['Unlimited vaults & files', 'Duress Mode', 'Device Sync — iPhone + iPad', 'Create secure shares with limits & expiry', 'Disguised app icons', 'Everything in Free'];
+    var compare = ['vs Apple Hidden Album', 'vs Keepsafe', 'vs Private Photo Vault', 'vs Calculator apps'];
+    var qa = [
+      ['What is Vaultaire?', 'A local-first encrypted vault for iPhone and iPad. Files are encrypted with AES-256-GCM under a random master key, unlocked by a pattern you draw. No account.'],
+      ['What if I forget my pattern?', 'Use your nine-word recovery phrase to regain access. Without the pattern or the phrase, nobody — including us — can decrypt your vault.'],
+      ['Can Apple see my files?', 'No. Everything is encrypted on your device before iCloud receives it. Apple only ever stores ciphertext.'],
+      ['Do I need an account?', 'No account, no email, no phone number. Install it and draw a pattern.'],
+      ['Do you optimize my data?', 'Photos and videos are stored in an optimized form by default. Switch to “Original” in Settings to keep full quality.'],
+      ['How does sharing work?', 'Share a vault with a secret phrase. You can limit opens, set an expiry and block export. Creating a share needs Pro; opening one is free.'],
+      ['Do you support folders?', 'Yes — folders and nested folders, with custom ordering.'],
+      ['What can I store?', 'Photos, videos, documents, notes — any file type.'],
+      ['How many vaults can I have?', 'Up to 3 on Free. Unlimited on Pro.'],
+      ['How many files per vault?', 'Free includes 100 photos and 10 videos in total. Pro is unlimited.'],
+      ['Do you collect analytics?', 'Anonymous usage and crash data, on by default. Turn it off any time with “Share errors anonymously” in Settings.']
+    ];
+    var open = this.state.open;
+    var faqs = qa.map(function (x, i) {
+      var isOpen = open === i;
+      return { q: x[0], a: x[1], open: isOpen, iconD: isOpen ? ic.minus : ic.plus, line: isOpen ? '#1E3AA7' : 'rgba(30,58,167,0.35)', toggle: function () { self.setState({ open: isOpen ? -1 : i }); } };
+    });
+    return { ic: ic, trust: trust, problems: problems, stats: stats, features: features, specs: specs, freeList: freeList, proList: proList, compare: compare, faqs: faqs };
+  }
+}
+</script>
+</body>
+</html>

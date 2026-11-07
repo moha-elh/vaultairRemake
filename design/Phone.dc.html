@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vaultaire phone mockup</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 300px; height: 620px; box-sizing: border-box; padding: 10px; border-radius: 52px; background: {{p.frame}}; border: 1px solid {{p.line}}; font-family: -apple-system, 'SF Pro Text', Inter, system-ui, sans-serif; color: {{p.fg}}; box-shadow: {{p.shadow}}">
+<div style="width: 100%; height: 100%; border-radius: 42px; background: {{p.screen}}; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 38px; display: flex; justify-content: center; align-items: center; flex-shrink: 0">
+<div style="width: 92px; height: 26px; border-radius: 14px; background: #000"></div>
+</div>
+<sc-if value="{{isUnlock}}" hint-placeholder-val="{{true}}">
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; padding: 26px 24px 26px; gap: 8px">
+<svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 8h9l5 15 5-15h9L23 34h-6z" fill="{{p.accent}}"></path><path d="M15 8l5 15 5-15" fill="none" stroke="{{p.screen}}" stroke-width="1.5" opacity="0.5"></path></svg>
+<div style="font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-top: 10px">Draw your pattern</div>
+<div style="font-size: 12px; color: {{p.muted}}">6+ dots · one change of direction</div>
+<div style="position: relative; width: 220px; height: 220px; margin-top: 30px">
+<svg width="220" height="220" viewBox="0 0 220 220" style="position: absolute; left: 0; top: 0" aria-hidden="true"><polyline points="22,22 66,22 110,22 154,22 154,66 154,110 110,154 66,198" fill="none" stroke="{{p.accent}}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"></polyline></svg>
+<div style="position: absolute; left: 0; top: 0; width: 220px; height: 220px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: repeat(5, minmax(0, 1fr))">
+<sc-for list="{{dots}}" as="d" hint-placeholder-count="25">
+<div style="display: flex; align-items: center; justify-content: center">
+<div style="width: {{d.size}}; height: {{d.size}}; border-radius: 50%; background: {{d.color}}; box-shadow: {{d.glow}}"></div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px; align-items: center; font-size: 13px; font-weight: 500; color: {{p.accentText}}">
+<span>Use recovery phrase</span>
+<span>Join shared vault</span>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{isVault}}" hint-placeholder-val="{{false}}">
+<div style="flex: 1; display: flex; flex-direction: column; padding: 10px 16px 18px; gap: 16px">
+<div style="display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: {{p.accentText}}">
+<span>Vaults</span>
+<span style="width: 28px; height: 28px; border-radius: 50%; background: {{p.chip}}; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span>
+</div>
+<div style="padding: 0 2px">
+<div style="font-size: 28px; font-weight: 700; letter-spacing: -0.02em">Vault</div>
+<div style="font-size: 11px; color: {{p.muted}}; margin-top: 2px">9 folders · AES-256-GCM</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 10px">
+<sc-for list="{{tiles}}" as="t" hint-placeholder-count="9">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center">
+<svg width="100%" viewBox="0 0 100 80" aria-hidden="true" style="display: block"><path d="M10 2h22c3 0 5 1 7 3l4 4h47a8 8 0 0 1 8 8v53a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8V10a8 8 0 0 1 8-8z" fill="{{p.folderBack}}"></path><rect x="2" y="17" width="96" height="61" rx="8" fill="{{p.folderFront}}"></rect><rect x="2" y="66" width="96" height="1.2" fill="#FFFFFF" opacity="0.3"></rect><rect x="2" y="70" width="96" height="1.2" fill="#FFFFFF" opacity="0.22"></rect></svg>
+<span style="font-size: 10px; font-weight: 600; line-height: 1.2">{{t.label}}</span>
+<span style="font-size: 9px; color: {{p.muted}}; margin-top: -3px">{{t.count}}</span>
+</div>
+</sc-for>
+</div>
+<div style="margin-top: auto; height: 46px; border-radius: 23px; background: {{p.accent}}; color: {{p.onAccent}}; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; font-weight: 600">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+Lock &amp; vanish
+</div>
+</div>
+</sc-if>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["navy","light","ember","toile"],"default":"navy"},"screen":{"editor":"enum","options":["unlock","vault"],"default":"unlock"},"$preview":{"width":300,"height":620}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var themes = {
+      navy: { frame: '#0E1530', line: 'rgba(143,176,255,0.28)', screen: '#070B1A', fg: '#E8ECFF', muted: '#8C97BF', accent: '#5B86FF', accentText: '#9DB8FF', onAccent: '#FFFFFF', dot: '#283363', shadow: '0 40px 120px rgba(40,80,255,0.35)', tiles: ['#16224D', '#1D2C63', '#24366F', '#121B3D'], tileFg: '#C9D6FF' },
+      light: { frame: '#E4E7F2', line: '#C6CBE0', screen: '#FAFBFE', fg: '#14172B', muted: '#5A6080', accent: '#2F5BEA', accentText: '#2448C4', onAccent: '#FFFFFF', dot: '#C9CEE3', shadow: '0 30px 80px rgba(20,30,80,0.18)', tiles: ['#DCE4FB', '#C9D6FA', '#E8ECF7', '#B8C9F7'], tileFg: '#1A2A6B' },
+      toile: { frame: '#F5E9D4', line: '#1E3AA7', screen: '#FFF8EC', fg: '#142A86', muted: '#5E6381', accent: '#1E3AA7', accentText: '#1E3AA7', onAccent: '#FCF2E2', dot: '#D5CCC0', shadow: '14px 14px 0 rgba(30,58,167,0.14)', tiles: ['#E6E3EE', '#D6D7EC', '#F0E4CF', '#C8CDEA'], tileFg: '#142A86' },
+      ember: { frame: '#16130F', line: 'rgba(255,200,120,0.25)', screen: '#0A0908', fg: '#F5EFE6', muted: '#A0978A', accent: '#F2B661', accentText: '#F4C988', onAccent: '#1A1206', dot: '#302B24', shadow: '0 40px 120px rgba(242,170,80,0.28)', tiles: ['#231C13', '#2C2217', '#3A2C1A', '#1A1611'], tileFg: '#F4D9AE' }
+    };
+    themes.toile.frame = '#0B0B0D';
+    themes.toile.line = '#000000';
+    themes.toile.shadow = '14px 14px 0 rgba(30,58,167,0.16)';
+    var folders = {
+      navy: ['#2B4BB5', '#5B86FF', 'rgba(143,176,255,0.14)'],
+      light: ['#2F5BEA', '#7FA0FF', '#E6ECFC'],
+      toile: ['#2A55C4', '#6E97E8', '#ECE4D4'],
+      ember: ['#B9813B', '#F2B661', 'rgba(242,182,97,0.16)']
+    };
+    var themeName = themes[this.props.theme] ? this.props.theme : 'navy';
+    var p = themes[themeName];
+    p.folderBack = folders[themeName][0];
+    p.folderFront = folders[themeName][1];
+    p.chip = folders[themeName][2];
+    var screen = this.props.screen || 'unlock';
+    var on = [0, 1, 2, 3, 8, 13, 17, 21];
+    var dots = [];
+    for (var i = 0; i < 25; i++) {
+      var a = on.indexOf(i) !== -1;
+      dots.push({ size: a ? '16px' : '9px', color: a ? p.accent : p.dot, glow: a ? '0 0 0 6px ' + p.accent + '33' : 'none' });
+    }
+    var names = ['Secret Cat', 'Ninja Squirrel', 'Spy Donut', 'Top Secret Duck', 'Not Memes', 'Classified Snacks', 'Covert Llama', 'Banana Protocol', 'Agent Hamster'];
+    var counts = [24, 9, 13, 41, 108, 7, 16, 3, 32];
+    var tiles = names.map(function (n, k) { return { label: n, count: counts[k] + ' items' }; });
+    return { p: p, dots: dots, tiles: tiles, isUnlock: screen === 'unlock', isVault: screen === 'vault' };
+  }
+}
+</script>
+</body>
+</html>
