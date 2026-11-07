@@ -471,7 +471,7 @@ export default function Home() {
           </div>
         </div>
         <Image className="footer-art" src={roadHome} sizes="100vw"
-          alt="Engraving of a cloaked traveler carrying a small locked chest across a plain toward a fortress on a distant hill." />
+          alt="Engraving of a walled castle on a rocky hilltop above a range of mountains." />
       </footer>
     </>
   );
