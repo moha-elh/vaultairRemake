@@ -496,6 +496,30 @@ h1, h2, h3, p { margin: 0; }
   .security__code { border-left: 0; border-top: 1px solid var(--on-ink-rule); }
 }
 
+/* ---------- Reviews ---------- */
+.reviews__all { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; }
+.reviews { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); }
+.stars { display: inline-flex; gap: 2px; font-size: 16px; color: var(--ink); flex-shrink: 0; }
+.review-lead { margin: 0; padding: 48px var(--pad-x); gap: 24px; justify-content: center; }
+.review-lead blockquote {
+  margin: 0;
+  font-family: var(--font-display); -webkit-text-stroke: var(--serif-bold) currentColor;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1.2;
+  color: var(--ink-deep);
+  text-wrap: pretty;
+}
+.review-lead figcaption, .review figcaption { font-size: 14px; color: var(--muted); }
+.review__name { color: var(--ink); font-weight: 600; }
+.review-list { padding: 8px var(--pad-x); gap: 0; }
+.review { margin: 0; padding: 24px 0; border-bottom: 1px dashed var(--rule-soft); display: flex; flex-direction: column; gap: 8px; }
+.review:last-child { border-bottom: 0; }
+.review__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.review__title { font-family: var(--font-display); -webkit-text-stroke: var(--serif-bold) currentColor; font-size: 24px; line-height: 1.1; color: var(--ink-deep); }
+.review blockquote { margin: 0; font-size: 14px; line-height: 1.6; }
+@media (max-width: 960px) { .reviews { grid-template-columns: 1fr; } .review-lead blockquote { font-size: 24px; } }
+
 /* ---------- Plans ---------- */
 .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .plan { padding: 44px var(--pad-x); gap: 20px; }
@@ -665,7 +689,9 @@ html { scroll-padding-top: 80px; }
 /* Lists & links */
 .compare a { transition: padding 0.2s ease, color 0.2s ease; }
 .compare a:hover { padding-left: 8px; color: var(--ink-deep); }
-.compare a:hover .icon { transform: translate(3px, -3px); }
+.compare a:hover .icon, .reviews__all:hover .icon { transform: translate(3px, -3px); }
+.reviews__all .icon { transition: transform 0.2s ease; }
+.reviews__all:hover { text-decoration: underline; text-underline-offset: 4px; }
 .faq summary { transition: color 0.2s ease; }
 .faq summary:hover { color: var(--ink); }
 .faq summary:hover .icon--toggle { transform: rotate(90deg); }

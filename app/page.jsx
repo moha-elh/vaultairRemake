@@ -74,6 +74,27 @@ const FAQ = [
   ["Do you collect analytics?", "Anonymous usage and crash data, on by default. Turn it off any time with “Share errors anonymously” in Settings."],
 ];
 
+// Verbatim 5-star reviews from the US App Store listing (Oct 2026 and earlier).
+const APP_STORE_REVIEWS = "https://apps.apple.com/us/app/photo-vault-vaultaire/id6758529311?see-all=reviews";
+const LEAD_REVIEW = {
+  title: "Be more secure",
+  body: "Love this app! Just one more (secure) way to keep the files, pics, or videos that really aren’t anyone else’s business but your own. Very intuitive interface, highly recommend.",
+  name: "BoyLenny",
+  date: "Oct 2026",
+};
+const REVIEWS = [
+  ["Best photo vault app out!", "Super easy to use and does exactly what I need. Highly recommend to everyone!", "Andrewd3211", "Sep 2026"],
+  ["Clean and Modern Design", "The app has a clean and modern interface. The design looks simple, and the layout is easy to understand. Overall, it feels well-organized.", "Zyphor Vexora", "Oct 2026"],
+  ["great app", "Excellent UI, secure way to hide and organize files.", "bknc_m3", "Oct 2026"],
+  ["Thank you!", "Exactly what I was looking for. Works perfectly.", "Perelises", "Jun 2026"],
+];
+
+const Stars = () => (
+  <span className="stars" role="img" aria-label="5 out of 5 stars">
+    {[0, 1, 2, 3, 4].map((k) => <Icon key={k} name="star-fill" />)}
+  </span>
+);
+
 const COMPARE = ["Apple Hidden Album", "Keepsafe", "Private Photo Vault", "Calculator apps"];
 
 const num = (i) => String(i + 1).padStart(2, "0") + ".";
@@ -326,11 +347,38 @@ export default function Home() {
             </div>
           </section>
 
-          {/* 06 Plans */}
+          {/* 06 Reviews */}
+          <section id="reviews" className="section" aria-labelledby="reviews-title">
+            <div className="section-head" data-reveal="up">
+              <div>
+                <p className="label">06. Reviews</p>
+                <h2 id="reviews-title" className="h-section">Rated 4.7 by people who’d <em>rather not say why.</em></h2>
+              </div>
+              <a className="reviews__all" href={APP_STORE_REVIEWS}>All reviews on the App Store <Icon name="arrow-up-right" /></a>
+            </div>
+            <div className="cells reviews">
+              <figure className="cell review-lead" data-reveal="up">
+                <Stars />
+                <blockquote>“{LEAD_REVIEW.body}”</blockquote>
+                <figcaption><span className="review__name">{LEAD_REVIEW.name}</span> · {LEAD_REVIEW.title} · {LEAD_REVIEW.date}</figcaption>
+              </figure>
+              <div className="cell review-list">
+                {REVIEWS.map(([title, body, name, date], i) => (
+                  <figure className="review" key={name} data-reveal="up" style={stagger(i)}>
+                    <div className="review__head"><span className="review__title">{title}</span><Stars /></div>
+                    <blockquote>{body}</blockquote>
+                    <figcaption><span className="review__name">{name}</span> · {date}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* 07 Plans */}
           <section id="plans" className="section" aria-labelledby="plans-title">
             <div className="section-head" data-reveal="up">
               <div>
-                <p className="label">06. Plans</p>
+                <p className="label">07. Plans</p>
                 <h2 id="plans-title" className="h-section">Start free. <em>Go Pro</em> when you need more.</h2>
               </div>
             </div>
@@ -351,10 +399,10 @@ export default function Home() {
             </div>
           </section>
 
-          {/* 07 FAQ */}
+          {/* 08 FAQ */}
           <section id="faq" className="section cells faq-wrap" aria-labelledby="faq-title">
             <div className="cell faq-intro" data-reveal="up">
-              <p className="label">07. Questions</p>
+              <p className="label">08. Questions</p>
               <h2 id="faq-title" className="h-section">Asked, <em>answered.</em></h2>
               <nav className="compare" aria-label="Comparisons">
                 <div className="label compare__label">How Vaultaire compares</div>
