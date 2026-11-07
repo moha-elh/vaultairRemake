@@ -253,7 +253,6 @@ h1, h2, h3, p { margin: 0; }
   fill: none; stroke: var(--seal); stroke-width: 3; stroke-linecap: round;
   vector-effect: non-scaling-stroke;
 }
-.hero__twist path { stroke-dasharray: 1; stroke-dashoffset: 0; }
 .hero__answer { display: block; margin-top: 0.14em; color: var(--seal); }
 .hero__eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; color: var(--ink); }
 .hero__stars { display: inline-flex; gap: 2px; font-size: 16px; color: var(--ink); }
@@ -700,64 +699,15 @@ html { scroll-padding-top: 80px; }
 }
 .faq details[open]::details-content { block-size: auto; }
 
-/* Blinking caret at the end of the config block */
-.caret { display: inline-block; width: 0.55em; height: 1.1em; margin-left: 4px; vertical-align: text-bottom; background: var(--on-ink); animation: blink 1.1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-
 @media (prefers-reduced-motion: no-preference) {
-  /* Hero enters on load */
-  .hero__inner > * { animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
-  .hero__inner > :nth-child(2) { animation-delay: 0.08s; }
-  .hero__inner > :nth-child(3) { animation-delay: 0.16s; }
-  .hero__inner > :nth-child(4) { animation-delay: 0.24s; }
-  .hero__inner > :nth-child(5) { animation-delay: 0.32s; }
-  .hero .figure img { animation: develop 1.4s ease 0.2s both; }
-  .hero__twist path { animation: draw 0.9s ease-out 0.7s both; }
-
-  /* Scroll reveals (only once JS has marked the page). data-reveal picks the move. */
+  /* Scroll reveals, used only by the plans and the FAQ (only once JS has marked the page) */
   .js [data-reveal] {
-    --d: calc(var(--i, 0) * 90ms);
-    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-    transition: opacity 0.7s ease var(--d), transform 0.9s var(--ease) var(--d),
-      clip-path 0.9s var(--ease) var(--d), filter 1.2s ease var(--d), background-color 0.25s ease;
+    transition: opacity 0.7s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.25s ease;
+    transition-delay: calc(var(--i, 0) * 90ms), calc(var(--i, 0) * 90ms), 0s;
   }
-  .js [data-reveal]:not([data-reveal="head"]):not(.is-in) { opacity: 0; }
-  .js [data-reveal="up"]:not(.is-in) { transform: translateY(28px); }
-  .js [data-reveal="left"]:not(.is-in) { transform: translateX(-40px); }
-  .js [data-reveal="right"]:not(.is-in) { transform: translateX(40px); }
-  .js [data-reveal="pop"]:not(.is-in) { transform: scale(0.9); }
-  .js [data-reveal="flip"] { transform-origin: 50% 0; }
-  .js [data-reveal="flip"]:not(.is-in) { transform: perspective(900px) rotateX(-60deg); }
-  .js [data-reveal="phone"]:not(.is-in) { transform: translateY(120px) rotate(6deg); }
-  .js [data-reveal="develop"]:not(.is-in) { filter: saturate(0) contrast(0.4) blur(6px); transform: scale(1.04); }
-  .js [data-reveal="wipe"] { clip-path: inset(0 0 0 0); }
-  .js [data-reveal="wipe"]:not(.is-in) { clip-path: inset(0 100% 0 0); opacity: 1; }
-  .js [data-reveal="unroll"] { clip-path: inset(0 0 0 0); }
-  .js [data-reveal="unroll"]:not(.is-in) { clip-path: inset(0 0 100% 0); opacity: 1; }
-
-  /* Headings: label slides in, title rises out of a mask, copy follows */
-  .js [data-reveal="head"] :is(.label, .h-section, h2 ~ p, .section-head > p, .spec__row, .compare) {
-    transition: opacity 0.7s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), clip-path 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
-  }
-  .js [data-reveal="head"] .h-section { clip-path: inset(-20% -5% -25% -5%); transition-delay: 0.1s; }
-  .js [data-reveal="head"]:not(.is-in) .h-section { clip-path: inset(-20% -5% 100% -5%); transform: translateY(0.5em); }
-  .js [data-reveal="head"]:not(.is-in) .label { opacity: 0; transform: translateX(-24px); }
-  .js [data-reveal="head"] :is(h2 ~ p, .section-head > p, .compare) { transition-delay: 0.3s; }
-  .js [data-reveal="head"]:not(.is-in) :is(h2 ~ p, .section-head > p, .compare) { opacity: 0; transform: translateY(12px); }
-  .js [data-reveal="head"] .spec__row { transition-delay: calc(0.35s + var(--i, 0) * 100ms); }
-  .js [data-reveal="head"]:not(.is-in) .spec__row { opacity: 0; transform: translateX(-24px); }
-
-  /* Pattern draws itself, phone folders pop in */
-  .js .pattern-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease 0.4s; }
-  .js .is-in .pattern-line { stroke-dashoffset: 0; }
-  .js .pattern-end { opacity: 0; transition: opacity 0.3s ease 1.9s; }
-  .js .is-in .pattern-end { opacity: 1; }
-  .js .folders > div { opacity: 0; transform: scale(0.85); transition: opacity 0.4s ease, transform 0.4s ease; transition-delay: calc(0.3s + var(--i) * 60ms); }
-  .js .is-in .folders > div { opacity: 1; transform: none; }
+  .js [data-reveal="left"]:not(.is-in) { opacity: 0; transform: translateX(-40px); }
+  .js [data-reveal="right"]:not(.is-in) { opacity: 0; transform: translateX(40px); }
 }
-@keyframes draw { from { stroke-dashoffset: 1; } }
-@keyframes rise { from { opacity: 0; transform: translateY(20px); } }
-@keyframes develop { from { opacity: 0; filter: saturate(0) contrast(0.6); } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

@@ -143,7 +143,7 @@ export default function Home() {
                 Your Hidden album{" "}
                 <em className="hero__twist">
                   isn’t actually
-                  <svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 14C60 6 120 5 180 9s90 4 117-3" /></svg>
+                  <svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14C60 6 120 5 180 9s90 4 117-3" /></svg>
                 </em>{" "}
                 hidden.
                 <span className="hero__answer">Vaultaire is.</span>
@@ -168,7 +168,7 @@ export default function Home() {
           {/* Trust strip */}
           <section className="section cells trust" aria-label="What Vaultaire is built without">
             {TRUST.map(([icon, title, sub], i) => (
-              <div className="cell" key={title} data-reveal="left" style={stagger(i)}>
+              <div className="cell" key={title}>
                 <span className="icon-box"><Icon name={icon} /></span>
                 <div><div className="trust__title">{title}</div><div className="trust__sub">{sub}</div></div>
               </div>
@@ -178,17 +178,17 @@ export default function Home() {
           {/* 01 Problem */}
           <section className="section" aria-labelledby="problem-title">
             <div className="keeper">
-              <div className="keeper__text" data-reveal="head">
+              <div className="keeper__text">
                 <p className="label">01. The problem</p>
                 <h2 id="problem-title" className="h-section">Someone takes your phone. <em>Now what?</em></h2>
                 <p>Hidden folders and calculator disguises hide things from a glance, not from a person holding your unlocked phone.</p>
               </div>
-              <Image className="keeper__img" data-reveal="develop" src={keeper} sizes="(max-width: 1280px) 100vw, 1280px"
+              <Image className="keeper__img" src={keeper} sizes="(max-width: 1280px) 100vw, 1280px"
                 alt="Engraving of a robed figure turning a key in an iron-bound chest, with photographs, a sealed scroll, an inkwell and a potted plant on the table." />
             </div>
             <div className="cells problems">
               {PROBLEMS.map(([icon, title, body], i) => (
-                <article className="cell" key={title} data-reveal="wipe" style={stagger(i)}>
+                <article className="cell" key={title}>
                   <div className="cell__head"><h3 className="cell__title"><span>{num(i)}</span> {title}</h3><Icon name={icon} className="cell__icon" /></div>
                   <p className="cell__body">{body}</p>
                 </article>
@@ -198,7 +198,7 @@ export default function Home() {
 
           {/* 02 Math */}
           <section className="section" aria-labelledby="math-title">
-            <div className="section-head" data-reveal="head">
+            <div className="section-head">
               <div>
                 <p className="label">02. Under the hood</p>
                 <h2 id="math-title" className="h-section">The math behind <em>the lock.</em></h2>
@@ -208,18 +208,18 @@ export default function Home() {
             <div className="math">
               <div className="cells stats">
                 {STATS.map(([icon, value, label], i) => (
-                  <div className="cell stat" key={value} data-reveal="up" style={stagger(i)}>
+                  <div className="cell stat" key={value}>
                     <div className="cell__head"><span className="cell__title">{num(i)}</span><Icon name={icon} className="cell__icon" /></div>
-                    <div><div className="stat__value">{value.split(/(\d+)/).map((part, k) => (k % 2 ? <span key={k} data-count={part}>{part}</span> : part))}</div><div className="stat__label">{label}</div></div>
+                    <div><div className="stat__value">{value}</div><div className="stat__label">{label}</div></div>
                   </div>
                 ))}
               </div>
-              <div className="duress" data-reveal="up">
+              <div className="duress">
                 <p className="label"><Icon name="siren" />Duress Mode · Pro</p>
                 <h3 className="duress__title">Forced to <em>unlock?</em></h3>
                 <p>Draw your duress pattern. One vault opens; the others are silently removed from the device. Your cloud backup stays recoverable with your phrase.</p>
                 <a className="btn btn--paper btn--sm" href={APP_STORE}>Get Vaultaire Pro <Icon name="arrow-right" /></a>
-                <div className="phone" aria-hidden="true" data-reveal="phone" style={stagger(3)}>
+                <div className="phone" aria-hidden="true">
                   <div className="phone__screen">
                     <div className="phone__island" />
                     <div className="phone__bar"><span>Vaults</span><span className="phone__add"><Icon name="plus" /></span></div>
@@ -228,7 +228,7 @@ export default function Home() {
                       <div className="phone__sub">9 folders · AES-256-GCM</div>
                     </div>
                     <div className="folders">
-                      {FOLDERS.map(([name, count], i) => <div key={name} style={stagger(i)}><Folder name={name} count={count} /></div>)}
+                      {FOLDERS.map(([name, count]) => <Folder key={name} name={name} count={count} />)}
                     </div>
                     <div className="phone__lock"><Icon name="lock-key" />Lock &amp; vanish</div>
                   </div>
@@ -239,7 +239,7 @@ export default function Home() {
 
           {/* 03 Features */}
           <section id="features" className="section" aria-labelledby="features-title">
-            <div className="section-head" data-reveal="head">
+            <div className="section-head">
               <div>
                 <p className="label">03. Features</p>
                 <h2 id="features-title" className="h-section">Twelve ways to <em>keep a secret.</em></h2>
@@ -248,7 +248,7 @@ export default function Home() {
             </div>
             <div className="cells features">
               {FEATURES.map(([icon, title, body, tag, pro], i) => (
-                <article className={`cell${i === 0 ? " cell--ink" : ""}`} key={title} data-reveal="pop" style={stagger(i % 4)}>
+                <article className={`cell${i === 0 ? " cell--ink" : ""}`} key={title}>
                   <div className="cell__head"><h3 className="cell__title">{num(i)} {title}</h3><Icon name={icon} className="cell__icon" /></div>
                   <p className="cell__body">{body}</p>
                   <span className={`cell__tag${pro ? " cell__tag--pro" : ""}`}>{tag}</span>
@@ -259,21 +259,21 @@ export default function Home() {
 
           {/* 04 How it works */}
           <section id="how-it-works" className="section" aria-labelledby="how-title">
-            <div className="section-head" data-reveal="head">
+            <div className="section-head">
               <div>
                 <p className="label">04. How it works</p>
                 <h2 id="how-title" className="h-section">From pattern to ciphertext <em>in three moves.</em></h2>
               </div>
             </div>
             <div className="cells steps">
-              <article className="cell step" data-reveal="flip" style={stagger(0)}>
+              <article className="cell step">
                 <div className="cell__head">
                   <span className="step__num">I.</span>
                   <span className="step__visual">
                     <svg width="80" height="80" viewBox="0 0 112 112" aria-hidden="true">
                       <g fill="#d5ccc0">{DOTS.map(([cx, cy]) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3" />)}</g>
-                      <polyline className="pattern-line" pathLength="1" points="12,12 34,12 56,12 78,12 78,34 78,56 56,78 34,100" fill="none" stroke="#1e3aa7" strokeWidth="2.5" />
-                      <g fill="#1e3aa7"><rect x="8" y="8" width="8" height="8" /><rect className="pattern-end" x="30" y="96" width="8" height="8" /></g>
+                      <polyline points="12,12 34,12 56,12 78,12 78,34 78,56 56,78 34,100" fill="none" stroke="#1e3aa7" strokeWidth="2.5" />
+                      <g fill="#1e3aa7"><rect x="8" y="8" width="8" height="8" /><rect x="30" y="96" width="8" height="8" /></g>
                     </svg>
                   </span>
                 </div>
@@ -281,7 +281,7 @@ export default function Home() {
                 <p>At least six dots and one change of direction on a 5×5 grid. That’s your key. Nothing to type, nothing to remember on paper.</p>
                 <div className="step__tech">PBKDF2 · DEVICE-WIDE KEYCHAIN SALT</div>
               </article>
-              <article className="cell step" data-reveal="flip" style={stagger(1)}>
+              <article className="cell step">
                 <div className="cell__head">
                   <span className="step__num">II.</span>
                   <span className="step__visual"><Icon name="folder-plus" /></span>
@@ -290,7 +290,7 @@ export default function Home() {
                 <p>Import photos, videos, documents and notes, or shoot straight into it with the secure camera.</p>
                 <div className="step__tech">AES-256-GCM · ENCRYPTED ON ENTRY</div>
               </article>
-              <article className="cell cell--ink step" data-reveal="flip" style={stagger(2)}>
+              <article className="cell cell--ink step">
                 <div className="cell__head">
                   <span className="step__num">III.</span>
                   <span className="step__visual"><Icon name="lock-key" /></span>
@@ -304,14 +304,14 @@ export default function Home() {
 
           {/* 05 Security */}
           <section id="security" className="section security" aria-labelledby="security-title">
-            <div className="security__copy" data-reveal="head">
+            <div className="security__copy">
               <p className="label">05. Security model</p>
               <h2 id="security-title" className="h-section">We don’t trust servers. <em>We trust math.</em></h2>
               <dl className="spec">
-                {SPEC.map(([dt, dd], i) => <div className="spec__row" key={dt} style={stagger(i)}><dt>{dt}</dt><dd>{dd}</dd></div>)}
+                {SPEC.map(([dt, dd]) => <div className="spec__row" key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}
               </dl>
             </div>
-            <div className="security__code" data-reveal="unroll" style={stagger(1)}>
+            <div className="security__code">
               <div className="code">
                 <div className="code__bar"><span>vault.config</span><span>read-only</span></div>
                 <pre><code>{`{
@@ -322,14 +322,14 @@ export default function Home() {
   account:       null
 }
 `}<span className="comment">{`// Servers never receive your keys.
-// Only your pattern or phrase decrypts.`}</span><span className="caret" /></code></pre>
+// Only your pattern or phrase decrypts.`}</span></code></pre>
               </div>
             </div>
           </section>
 
           {/* 06 Plans */}
           <section id="plans" className="section" aria-labelledby="plans-title">
-            <div className="section-head" data-reveal="head">
+            <div className="section-head">
               <div>
                 <p className="label">06. Plans</p>
                 <h2 id="plans-title" className="h-section">Start free. <em>Go Pro</em> when you need more.</h2>
@@ -354,7 +354,7 @@ export default function Home() {
 
           {/* 07 FAQ */}
           <section id="faq" className="section cells faq-wrap" aria-labelledby="faq-title">
-            <div className="cell faq-intro" data-reveal="head">
+            <div className="cell faq-intro">
               <p className="label">07. Questions</p>
               <h2 id="faq-title" className="h-section">Asked, <em>answered.</em></h2>
               <nav className="compare" aria-label="Comparisons">
@@ -378,7 +378,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="footer-inner">
-          <div className="footer-cta" data-reveal="up">
+          <div className="footer-cta">
             <h2>Encrypt your first file in under <em>ten seconds.</em></h2>
             <div className="footer-cta__side">
               <p>Free on the App Store for iPhone and iPad. No account, ever.</p>
