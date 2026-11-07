@@ -42,8 +42,3 @@ design/               Original canvas sources and the old static version (static
 - 1100px: the trust strip and problems drop to 2 columns, and "the math behind the lock" stacks.
 - 900–1000px: the nav hides, and the steps, security section and footer stack.
 - 560px: everything becomes a single column.
-
-## TODO
-
-- [ ] Mobile nav menu (the nav links are hidden below 900px)
-- [ ] Localized versions (the live site supports 26+ languages)
