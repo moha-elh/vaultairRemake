@@ -30,7 +30,7 @@ design/               Original canvas sources and the old static version (static
 | `--seal` | `#b0402a` | The one warm accent: "Vaultaire is." and its underline |
 | `--text` / `--muted` | `#3d4260` / `#5e6381` | Body / secondary text |
 
-**Type:** Newsreader (semibold 600, roman + italic) for display text, labels, nav and buttons. Geist for body text. Geist Mono for code. All load from Google Fonts.
+**Type:** Instrument Serif for display text, labels, nav and buttons, thickened with a text stroke (`--serif-bold`) since it ships in one weight. Geist for body text. Geist Mono for code. All load from Google Fonts.
 
 **Layout:** the page sits between two 1px ink rails (`.page`). Ruled grids use `.cells`, a grid with a `1px` gap over an ink background, so every divider is exactly one hairline. Cards follow a single pattern: `.cell__head` holds "NN. Title" at the top left and the icon at the top right, and the body sits at the bottom. `.cell--ink` is the filled, highlighted variant.
 
