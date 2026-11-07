@@ -136,9 +136,9 @@ h1, h2, h3, p { margin: 0; }
 .btn--ink { background: var(--ink); color: var(--on-ink); }
 .btn--ink:hover { background: var(--ink-deep); color: var(--on-ink); }
 .btn--outline { color: var(--ink); }
-.btn--outline:hover { background: var(--ink); color: var(--on-ink); }
+.btn--outline:hover { background: var(--paper-2); color: var(--ink); }
 .btn--paper { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-.btn--paper:hover { background: transparent; color: var(--on-ink); }
+.btn--paper:hover { background: var(--paper-2); color: var(--ink); border-color: var(--paper-2); }
 .btn--sm { min-height: 48px; padding: 0 20px; font-size: 16px; }
 
 /* Ruled grid of cells: 1px gaps over an ink background = perfect hairlines */
@@ -576,8 +576,7 @@ h1, h2, h3, p { margin: 0; }
 .footer-cta h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; }
 .footer-cta__side { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 .footer-cta__side p { font-size: 16px; color: var(--on-ink-body); }
-.site-footer .btn--paper { color: var(--ink); }
-.site-footer .btn--paper:hover { color: var(--on-ink); border-color: var(--on-ink); }
+.site-footer .btn--paper, .site-footer .btn--paper:hover { color: var(--ink); }
 .footer-cols {
   display: grid;
   grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
