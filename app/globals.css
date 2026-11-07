@@ -700,14 +700,25 @@ html { scroll-padding-top: 80px; }
 .faq details[open]::details-content { block-size: auto; }
 
 @media (prefers-reduced-motion: no-preference) {
-  /* Scroll reveals, used only by the plans and the FAQ (only once JS has marked the page) */
+  /* Hero settles in on load */
+  .hero__inner > * { animation: rise 0.6s ease-out both; }
+  .hero__inner > :nth-child(2) { animation-delay: 0.06s; }
+  .hero__inner > :nth-child(3) { animation-delay: 0.12s; }
+  .hero__inner > :nth-child(4) { animation-delay: 0.18s; }
+  .hero__inner > :nth-child(5) { animation-delay: 0.24s; }
+
+  /* Scroll reveals (only once JS has marked the page). "up" is the light default;
+     the plans and FAQ slide in from the sides. */
   .js [data-reveal] {
-    transition: opacity 0.7s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.25s ease;
-    transition-delay: calc(var(--i, 0) * 90ms), calc(var(--i, 0) * 90ms), 0s;
+    transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.25s ease;
+    transition-delay: calc(var(--i, 0) * 60ms), calc(var(--i, 0) * 60ms), 0s;
   }
+  .js [data-reveal="up"]:not(.is-in) { opacity: 0; transform: translateY(14px); }
   .js [data-reveal="left"]:not(.is-in) { opacity: 0; transform: translateX(-40px); }
   .js [data-reveal="right"]:not(.is-in) { opacity: 0; transform: translateX(40px); }
 }
+
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
