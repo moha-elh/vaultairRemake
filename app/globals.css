@@ -22,8 +22,8 @@
   --font-body: var(--f-sans), system-ui, -apple-system, sans-serif;
   --font-mono: var(--f-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --fs-display: clamp(56px, 8.2vw, 124px);
-  --fs-section: clamp(44px, 4.6vw, 68px);
+  --fs-display: clamp(44px, 6.6vw, 96px);
+  --fs-section: clamp(36px, 4vw, 56px);
 
   /* Layout */
   --page-max: 1280px;
@@ -79,7 +79,7 @@ h1, h2, h3, p { margin: 0; }
 .section { border-bottom: 1px solid var(--ink); }
 
 .label {
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.06em;
   line-height: 1.2;
@@ -88,20 +88,19 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .h-display {
-  font-family: var(--font-display);
-  font-weight: 400;
+  font-family: var(--font-display); font-weight: 600;
   font-size: var(--fs-display);
-  line-height: 0.92;
-  letter-spacing: -0.015em;
+  line-height: 1;
+  letter-spacing: -0.025em;
   color: var(--ink-deep);
 }
 
 .h-section {
   text-wrap: balance;
-  font-family: var(--font-display);
-  font-weight: 400;
+  font-family: var(--font-display); font-weight: 600;
   font-size: var(--fs-section);
-  line-height: 0.98;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
   color: var(--ink-deep);
 }
 
@@ -125,7 +124,7 @@ h1, h2, h3, p { margin: 0; }
   gap: 10px;
   min-height: 54px;
   padding: 0 26px;
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 20px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -157,8 +156,7 @@ h1, h2, h3, p { margin: 0; }
   gap: 16px;
 }
 .cell__title {
-  font-weight: 400;
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 16px;
   line-height: 1.2;
   letter-spacing: 0.05em;
@@ -168,7 +166,7 @@ h1, h2, h3, p { margin: 0; }
 .cell__icon { font-size: 32px; color: var(--ink); }
 .cell__body { margin-top: auto; font-size: 14px; line-height: 1.55; }
 .cell__tag {
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -195,7 +193,7 @@ h1, h2, h3, p { margin: 0; }
   padding: 0 28px;
   border-right: 1px solid var(--ink);
   color: var(--ink-deep);
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 24px;
   line-height: 1;
 }
@@ -207,12 +205,10 @@ h1, h2, h3, p { margin: 0; }
   gap: 36px;
 }
 .nav a {
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
   color: var(--ink-deep);
-  /* Instrument Serif ships one weight; a hairline stroke reads as semibold */
-  -webkit-text-stroke: 0.4px currentColor;
 }
 .header-cta {
   display: flex;
@@ -221,7 +217,7 @@ h1, h2, h3, p { margin: 0; }
   padding: 0 28px;
   background: var(--ink);
   color: var(--on-ink);
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -268,7 +264,7 @@ h1, h2, h3, p { margin: 0; }
   gap: 8px;
   padding: 14px 28px;
   border-top: 1px solid var(--ink);
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -335,14 +331,14 @@ h1, h2, h3, p { margin: 0; }
 .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .stat { min-height: 230px; justify-content: space-between; }
 .stat__value {
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 64px;
   line-height: 1;
   color: var(--ink-deep);
 }
 .stat__label {
   margin-top: 10px;
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -361,7 +357,7 @@ h1, h2, h3, p { margin: 0; }
   gap: 16px;
 }
 .duress .label { display: flex; align-items: center; gap: 10px; color: var(--on-ink-label); }
-.duress__title { font-family: var(--font-display); font-size: 52px; line-height: 0.98; max-width: 300px; }
+.duress__title { font-family: var(--font-display); font-weight: 600; font-size: 52px; line-height: 0.98; max-width: 300px; }
 .duress p { font-size: 14px; color: var(--on-ink-body); max-width: 280px; }
 .duress .btn { margin-top: 8px; }
 .duress .phone { position: absolute; right: 36px; top: 120px; }
@@ -435,7 +431,7 @@ h1, h2, h3, p { margin: 0; }
 /* ---------- How it works ---------- */
 .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .step { padding: 36px; min-height: 460px; gap: 18px; }
-.step__num { font-family: var(--font-display); font-size: 96px; line-height: 0.8; color: var(--ink); }
+.step__num { font-family: var(--font-display); font-weight: 600; font-size: 96px; line-height: 0.8; color: var(--ink); }
 .step__visual {
   width: 112px; height: 112px;
   border: 1px solid var(--ink);
@@ -479,7 +475,7 @@ h1, h2, h3, p { margin: 0; }
   border-bottom: 1px dashed rgba(252, 242, 226, 0.3);
   font-size: 14px;
 }
-.spec__row dt { font-family: var(--font-display); font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--on-ink-label); }
+.spec__row dt { font-family: var(--font-display); font-weight: 600; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--on-ink-label); }
 .spec__row dd { margin: 0; }
 .security__code { padding: var(--pad-section) var(--pad-x); display: flex; align-items: center; border-left: 1px solid var(--on-ink-rule); }
 .code { width: 100%; border: 1px solid rgba(252, 242, 226, 0.45); background: var(--ink-deep); }
@@ -504,7 +500,7 @@ h1, h2, h3, p { margin: 0; }
 .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .plan { padding: 44px var(--pad-x); gap: 20px; }
 .plan__head { display: flex; justify-content: space-between; }
-.plan__price { font-family: var(--font-display); font-size: 80px; line-height: 0.9; color: var(--ink-deep); }
+.plan__price { font-family: var(--font-display); font-weight: 600; font-size: 80px; line-height: 0.9; color: var(--ink-deep); }
 .checklist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
 .checklist li {
   display: flex; align-items: center; gap: 12px;
@@ -542,7 +538,7 @@ h1, h2, h3, p { margin: 0; }
   min-height: 64px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   padding: 16px 0;
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 600;
   font-size: 24px;
   line-height: 1.1;
   color: var(--ink-deep);
@@ -567,7 +563,7 @@ h1, h2, h3, p { margin: 0; }
   padding-block: 48px 32px;
   border-bottom: 1px solid var(--on-ink-rule);
 }
-.footer-cta h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; }
+.footer-cta h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; }
 .footer-cta__side { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 .footer-cta__side p { font-size: 16px; color: var(--on-ink-body); }
 .site-footer .btn--paper { color: var(--ink); }
@@ -580,8 +576,8 @@ h1, h2, h3, p { margin: 0; }
   font-size: 14px;
 }
 .footer-brand { display: flex; flex-direction: column; gap: 14px; }
-.footer-brand__name { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-size: 32px; line-height: 1; }
-.footer-brand__tagline { font-family: var(--font-display); font-style: italic; font-size: 20px; line-height: 1.35; color: var(--on-ink-body); max-width: 300px; }
+.footer-brand__name { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 600; font-size: 32px; line-height: 1; }
+.footer-brand__tagline { font-family: var(--font-display); font-weight: 600; font-style: italic; font-size: 20px; line-height: 1.35; color: var(--on-ink-body); max-width: 300px; }
 .socials { display: flex; gap: 10px; margin-top: 6px; }
 .socials a {
   width: 44px; height: 44px;
@@ -591,8 +587,7 @@ h1, h2, h3, p { margin: 0; }
 }
 .footer-col { display: flex; flex-direction: column; gap: 12px; }
 .footer-col h3 {
-  font-family: var(--font-display);
-  font-weight: 400;
+  font-family: var(--font-display); font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
