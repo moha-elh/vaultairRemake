@@ -111,16 +111,16 @@ export default function Home() {
       <Reveal />
       <div className="page">
         <header className="site-header">
-          <a className="brand" href="#top" aria-label="Vaultaire home">
+          <a className="brand" href="/" aria-label="Vaultaire home">
             <svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><rect x="0.5" y="0.5" width="39" height="39" fill="#1e3aa7" /><path d="M9 11h7l4 11 4-11h7L23 31h-6z" fill="#fcf2e2" /></svg>
             Vaultaire
           </a>
           <nav className="nav" aria-label="Main">
-            <a href="#features">Features</a>
-            <a href="#how">How it works</a>
-            <a href="#security">Security</a>
-            <a href="#plans">Plans</a>
-            <a href="#faq">FAQ</a>
+            <a href="/features">Features</a>
+            <a href="/how-it-works">How it works</a>
+            <a href="/security">Security</a>
+            <a href="/plans">Plans</a>
+            <a href="/faq">FAQ</a>
           </nav>
           <a className="header-cta" href="https://vaultaire.app/go/app-store?ct=web_header_nav">
             Get the app <Icon name="arrow-up-right" />
@@ -129,14 +129,14 @@ export default function Home() {
 
         <main>
           {/* Hero */}
-          <section id="top" className="section hero">
+          <section className="section hero">
             <div className="hero__inner">
               <p className="hero__eyebrow">Local-first encrypted vault · iPhone &amp; iPad</p>
               <h1 className="h-display hero__title">Your Hidden album isn’t <em>actually</em> hidden. Vaultaire is.</h1>
               <p className="hero__lead">Your photos move into a vault only your pattern can open, encrypted on your phone. No account, no sign-up, no email.</p>
               <div className="hero__actions">
                 <a className="btn btn--ink" href={APP_STORE}><Icon name="download-simple" />Download free</a>
-                <a className="btn btn--outline" href="#how">See how it works</a>
+                <a className="btn btn--outline" href="/how-it-works">See how it works</a>
               </div>
               <div className="hero__meta">
                 <span className="hero__rating"><Icon name="star" />4.7 on the App Store</span>
@@ -244,7 +244,7 @@ export default function Home() {
           </section>
 
           {/* 04 How it works */}
-          <section id="how" className="section" aria-labelledby="how-title">
+          <section id="how-it-works" className="section" aria-labelledby="how-title">
             <div className="section-head" data-reveal>
               <div>
                 <p className="label">04. How it works</p>
@@ -386,7 +386,7 @@ export default function Home() {
             <nav className="footer-col" aria-label="Product">
               <h3>Product</h3>
               <a href="https://vaultaire.app/features/">Features</a>
-              <a href="#security">Security</a>
+              <a href="/security">Security</a>
               <a href="https://vaultaire.app/whats-new/">What’s New</a>
             </nav>
             <nav className="footer-col" aria-label="Resources">
