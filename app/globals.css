@@ -537,6 +537,7 @@ h1, h2, h3, p { margin: 0; }
 .plan.cell--ink { color: var(--on-ink); }
 .plan.cell--ink .label { color: var(--on-ink-label); }
 .plan.cell--ink .plan__price { color: var(--on-ink); }
+.plan__per { margin-left: 6px; font-size: 24px; color: var(--on-ink-label); }
 .plan.cell--ink .checklist { border-top-color: rgba(252, 242, 226, 0.5); }
 .plan.cell--ink .checklist li { border-bottom-color: rgba(252, 242, 226, 0.3); }
 .plan.cell--ink .checklist .icon { color: var(--on-ink); }

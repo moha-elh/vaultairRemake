@@ -391,8 +391,7 @@ export default function Home() {
               </div>
               <div className="cell cell--ink plan" data-reveal="right" style={stagger(1)}>
                 <div className="plan__head label"><span>Vaultaire Pro</span><span>Unlimited</span></div>
-                {/* TODO: real price from the App Store listing */}
-                <div className="plan__price">[PRO PRICE]</div>
+                <div className="plan__price">$49.99<span className="plan__per">/year</span></div>
                 <Checklist items={PRO} />
                 <a className="btn btn--paper" href={APP_STORE}>Get Vaultaire Pro</a>
               </div>

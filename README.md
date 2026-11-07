@@ -45,6 +45,5 @@ design/               Original canvas sources and the old static version (static
 
 ## TODO
 
-- [ ] Real Pro price (currently `[PRO PRICE]` in the Plans section)
 - [ ] Mobile nav menu (the nav links are hidden below 900px)
 - [ ] Localized versions (the live site supports 26+ languages)
