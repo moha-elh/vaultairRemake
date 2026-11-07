@@ -640,9 +640,13 @@ html { scroll-padding-top: 80px; }
 .btn {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
-.btn:hover { transform: translate(-3px, -3px); box-shadow: 3px 3px 0 var(--ink-deep); }
-.btn:active { transform: translate(0, 0); box-shadow: 0 0 0 var(--ink-deep); }
-.btn--paper:hover { box-shadow: 3px 3px 0 var(--paper); }
+/* Hover lifts the button off a layer in the opposite colour: light buttons sit on
+   blue, blue buttons on cream. The hairline keeps the layer visible on a same-colour background. */
+.btn:hover { transform: translate(-3px, -3px); }
+.btn--outline:hover { box-shadow: 3px 3px 0 var(--ink-deep); }
+.btn--paper:hover { box-shadow: 3px 3px 0 0 var(--ink), 3px 3px 0 1px var(--paper); }
+.btn--ink:hover { box-shadow: 3px 3px 0 0 var(--paper), 3px 3px 0 1px var(--ink); }
+.btn:active { transform: none; box-shadow: none; }
 .btn .icon, .header-cta .icon, .compare a .icon { transition: transform 0.2s ease; }
 .btn:hover .i-arrow-right { transform: translateX(3px); }
 .btn:hover .i-download-simple { transform: translateY(2px); }
